@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-product",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-02-03T11:01:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.nescafe-dolcegusto.com.br/",
+    "originPage": "Nescafe Dolce Gusto homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "product-grid",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + heading + price + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "product listings",
+      "e-commerce grids",
+      "bundle offerings",
+      "pricing displays"
+    ],
+    "notSuitableFor": [
+      "text-only content",
+      "blog article lists"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-02-03T11:01:00.000Z"
+  }
+}

@@ -1,0 +1,143 @@
+/*
+ * Hero Promo Block - Nescafé Dolce Gusto Style
+ * Colorful promotional hero sections
+ */
+
+.hero-promo-container {
+  max-width: unset !important;
+  padding: 0 !important;
+}
+
+.hero-promo-container > .hero-promo-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero-promo {
+  position: relative;
+  padding: var(--spacing-2xl) var(--spacing-lg);
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #C20069 100%);
+  overflow: hidden;
+}
+
+/* Hero with image - image becomes background */
+.hero-promo:not(.no-image) {
+  background: var(--color-primary);
+}
+
+.hero-promo picture {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+}
+
+.hero-promo img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Content styling */
+.hero-promo > div:not(:first-child) {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.hero-promo h1,
+.hero-promo h2,
+.hero-promo h3,
+.hero-promo h4,
+.hero-promo h5,
+.hero-promo h6 {
+  color: var(--color-white);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin: 0 0 var(--spacing-sm);
+}
+
+.hero-promo h2 {
+  font-size: var(--heading-font-size-xl);
+  font-weight: var(--font-weight-extrabold);
+}
+
+.hero-promo p {
+  color: var(--color-white);
+  font-size: var(--body-font-size-l);
+  margin: var(--spacing-xs) 0;
+}
+
+/* Price styling */
+.hero-promo del {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--body-font-size-m);
+}
+
+.hero-promo strong {
+  color: var(--color-white);
+  font-size: var(--heading-font-size-l);
+  font-weight: var(--font-weight-extrabold);
+}
+
+/* Buttons */
+.hero-promo a.button {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border-color: var(--color-white);
+  margin-top: var(--spacing-md);
+}
+
+.hero-promo a.button:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  border-color: var(--color-secondary);
+}
+
+/* No image variant - text only promo banner */
+.hero-promo.no-image {
+  background: linear-gradient(135deg, var(--color-accent-yellow) 0%, #FFC107 100%);
+  min-height: 150px;
+  padding: var(--spacing-xl) var(--spacing-lg);
+}
+
+.hero-promo.no-image h1,
+.hero-promo.no-image h2,
+.hero-promo.no-image h3,
+.hero-promo.no-image p {
+  color: var(--color-secondary);
+  text-shadow: none;
+}
+
+.hero-promo.no-image a.button {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  border-color: var(--color-secondary);
+}
+
+.hero-promo.no-image a.button:hover {
+  background-color: var(--color-secondary-dark);
+  border-color: var(--color-secondary-dark);
+}
+
+/* Responsive */
+@media (width >= 600px) {
+  .hero-promo {
+    padding: var(--spacing-3xl) var(--spacing-2xl);
+    min-height: 400px;
+  }
+
+  .hero-promo.no-image {
+    min-height: 180px;
+  }
+}
+
+@media (width >= 900px) {
+  .hero-promo {
+    padding: var(--spacing-4xl) var(--spacing-xl);
+  }
+}

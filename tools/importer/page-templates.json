@@ -1,0 +1,27 @@
+{
+  "templates": [
+    {
+      "name": "nescafe-homepage",
+      "urls": ["https://www.nescafe-dolcegusto.com.br/"],
+      "description": "Nescafé Dolce Gusto Brazil homepage with promotional carousel, product cards, and feature sections",
+      "blocks": [
+        {
+          "name": "carousel-promo",
+          "instances": [".homepage-banner", ".hero-carousel", "[data-block='carousel']"]
+        },
+        {
+          "name": "hero-promo",
+          "instances": [".promo-banner", ".hero-section", "[data-block='hero']"]
+        },
+        {
+          "name": "cards-product",
+          "instances": [".product-grid", ".cards-container", "[data-block='cards']"]
+        },
+        {
+          "name": "columns-product",
+          "instances": [".feature-section", ".columns-layout", "[data-block='columns']"]
+        }
+      ]
+    }
+  ]
+}
