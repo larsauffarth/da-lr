@@ -1,0 +1,181 @@
+/* Columns Teaser - Image + text side-by-side */
+
+.columns-teaser > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.columns-teaser img {
+  width: 100%;
+  display: block;
+}
+
+.columns-teaser > div > div {
+  order: 1;
+  padding: var(--spacing-lg);
+}
+
+.columns-teaser > div > .columns-teaser-img-col {
+  order: 0;
+  padding: 0;
+}
+
+.columns-teaser > div > .columns-teaser-img-col img {
+  display: block;
+  object-fit: cover;
+}
+
+.columns-teaser h2 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-size: var(--heading-font-size-xl);
+}
+
+/* Don't add arrow to h2 links */
+.columns-teaser h2 a::after {
+  content: none;
+}
+
+.columns-teaser p {
+  font-size: var(--body-font-size-l);
+  line-height: var(--line-height-normal);
+  margin-top: 0;
+}
+
+/* CTA links in teaser */
+.columns-teaser p > a:any-link,
+.columns-teaser p > a.button:any-link {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--body-font-size-l);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  text-transform: none;
+  letter-spacing: normal;
+  white-space: normal;
+}
+
+.columns-teaser p > a:hover,
+.columns-teaser p > a.button:hover {
+  color: var(--color-primary-dark);
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+}
+
+/* Arrow indicator for CTA links (not heading links) */
+.columns-teaser .button-container > a::after,
+.columns-teaser p > a::after,
+.columns-teaser p > a.button::after {
+  content: '>';
+  display: inline-block;
+  font-size: 0.8em;
+  font-weight: var(--font-weight-bold);
+}
+
+/* But not for links inside headings */
+.columns-teaser h2 a::after {
+  content: none;
+}
+
+/* In red-bg sections, invert colors */
+.section.red-bg .columns-teaser h2,
+.section.red-bg .columns-teaser p {
+  color: var(--color-white);
+}
+
+.section.red-bg .columns-teaser h2 a:any-link {
+  color: var(--color-white);
+}
+
+.section.red-bg .columns-teaser p > a:any-link,
+.section.red-bg .columns-teaser p > a.button:any-link,
+.section.red-bg .columns-teaser .button-container > a:any-link {
+  color: var(--color-white);
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: var(--body-font-size-l);
+  font-weight: var(--font-weight-bold);
+  text-transform: none;
+  letter-spacing: normal;
+  white-space: normal;
+}
+
+.section.red-bg .columns-teaser p > a:hover,
+.section.red-bg .columns-teaser p > a.button:hover,
+.section.red-bg .columns-teaser .button-container > a:hover {
+  opacity: 0.8;
+  background-color: transparent;
+  border: none;
+}
+
+/* In cream-bg sections */
+.section.cream-bg .columns-teaser h2 {
+  color: var(--color-gray-800);
+}
+
+.section.cream-bg .columns-teaser h2 a:any-link {
+  color: var(--color-primary);
+}
+
+.section.cream-bg .columns-teaser p {
+  color: var(--color-gray-800);
+}
+
+@media (width >= 900px) {
+  .columns-teaser > div {
+    align-items: stretch;
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .columns-teaser > div > div {
+    flex: 1;
+    order: unset;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--spacing-2xl);
+  }
+
+  .columns-teaser > div > .columns-teaser-img-col {
+    padding: 0;
+  }
+
+  .columns-teaser > div > .columns-teaser-img-col img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Mixed-content columns (image + text, no img-col class) on red-bg:
+     Card-like appearance with image at top, text below */
+  .section.red-bg .columns-teaser > div > div:not(.columns-teaser-img-col) {
+    padding: 0;
+    justify-content: flex-start;
+  }
+
+  .section.red-bg .columns-teaser > div > div:not(.columns-teaser-img-col) img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .section.red-bg .columns-teaser > div > div:not(.columns-teaser-img-col) h2 {
+    padding: 0 var(--spacing-md);
+    font-size: var(--heading-font-size-l);
+  }
+
+  .section.red-bg .columns-teaser > div > div:not(.columns-teaser-img-col) p {
+    padding: 0 var(--spacing-md);
+    font-size: var(--body-font-size-s);
+  }
+}

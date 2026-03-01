@@ -1,0 +1,24 @@
+name = "aem-cloudflare-worker"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+
+# Uncomment and configure as needed:
+
+# [vars]
+# ENVIRONMENT = "production"
+
+# [[kv_namespaces]]
+# binding = "MY_KV"
+# id = "your-kv-namespace-id"
+
+# [[r2_buckets]]
+# binding = "MY_BUCKET"
+# bucket_name = "my-bucket"
+
+# [[d1_databases]]
+# binding = "MY_DB"
+# database_name = "my-database"
+# database_id = "your-database-id"
+
+# [env.staging]
+# name = "aem-cloudflare-worker-staging"

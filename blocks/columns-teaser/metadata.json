@@ -1,0 +1,40 @@
+{
+  "variantName": "columns-teaser",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-02-27T07:10:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://unternehmen.rossmann.de/",
+    "originPage": "Rossmann corporate homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "teaser",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image column + text column with heading + paragraph + link",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "content teaser sections",
+      "linked promotional areas",
+      "image-text side-by-side layouts",
+      "corporate information sections"
+    ],
+    "notSuitableFor": [
+      "product showcase with pricing",
+      "multi-column data comparison",
+      "complex grid layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-02-27T07:10:00.000Z"
+  }
+}
