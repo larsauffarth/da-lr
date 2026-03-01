@@ -1,0 +1,40 @@
+{
+  "variantName": "cards-news",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-02-27T07:10:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://unternehmen.rossmann.de/",
+    "originPage": "Rossmann corporate homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "news-grid",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + date + heading + description + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "press release listings",
+      "news article grids",
+      "blog post summaries",
+      "corporate announcements"
+    ],
+    "notSuitableFor": [
+      "product listings with pricing",
+      "feature showcases without dates",
+      "image-only galleries"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-02-27T07:10:00.000Z"
+  }
+}

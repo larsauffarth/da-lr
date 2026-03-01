@@ -2,55 +2,81 @@
 /* global WebImporter */
 
 /**
- * DOM Cleanup Transformer
+ * Transformer for Rossmann corporate website cleanup
+ * Purpose: Remove site-wide non-content elements before and after block parsing
+ * Applies to: unternehmen.rossmann.de (all templates)
+ * Generated: 2026-02-27
  *
- * Removes common unwanted elements before parsing blocks.
- * Applied to entire document before block parsing.
- *
- * Source: https://www.nescafe-dolcegusto.com.br/
- * Generated: 2026-02-03
+ * SELECTORS EXTRACTED FROM: captured DOM during migration of https://unternehmen.rossmann.de/
  */
-export default function transform(document) {
-  // Remove script tags
-  document.querySelectorAll('script').forEach((el) => el.remove());
 
-  // Remove style tags
-  document.querySelectorAll('style').forEach((el) => el.remove());
+const TransformHook = {
+  beforeTransform: 'beforeTransform',
+  afterTransform: 'afterTransform',
+};
 
-  // Remove navigation elements (header/footer handled separately)
-  document.querySelectorAll('nav, .navigation, .nav-menu').forEach((el) => el.remove());
+export default function transform(hookName, element, payload) {
+  if (hookName === TransformHook.beforeTransform) {
+    // Remove header/navigation
+    // Found in captured DOM: <header id="site-header"><nav>...</nav></header>
+    WebImporter.DOMUtils.remove(element, [
+      '#site-header',
+      'header',
+    ]);
 
-  // Remove tracking/analytics elements
-  document.querySelectorAll('[data-analytics], [data-tracking], .analytics').forEach((el) => el.remove());
+    // Remove footer
+    // Found in captured DOM: <footer id="footer" class="footer">...</footer>
+    WebImporter.DOMUtils.remove(element, [
+      '#footer',
+      'footer',
+    ]);
 
-  // Remove hidden elements
-  document.querySelectorAll('[aria-hidden="true"], .hidden, .sr-only').forEach((el) => el.remove());
+    // Remove breadcrumbs
+    // Found in captured DOM: <ul class="breadcrumbs container breadcrumb breadcrumb-right">
+    WebImporter.DOMUtils.remove(element, [
+      '.breadcrumbs',
+    ]);
 
-  // Remove social share widgets
-  document.querySelectorAll('.social-share, .share-buttons, [data-share]').forEach((el) => el.remove());
+    // Remove search forms (header and mobile)
+    // Found in captured DOM: <form class="search-box header" id="tx_indexedsearch-header">
+    // Found in captured DOM: <form class="search-box mobile" id="tx_indexedsearch-mobile">
+    WebImporter.DOMUtils.remove(element, [
+      '#tx_indexedsearch-header',
+      '#tx_indexedsearch-mobile',
+      'form.search-box',
+    ]);
 
-  // Remove cookie consent banners
-  document.querySelectorAll('.cookie-banner, .cookie-consent, #cookie-notice').forEach((el) => el.remove());
+    // Remove back-to-top button
+    // Found in captured DOM: <div id="toTop" class="to-top">
+    WebImporter.DOMUtils.remove(element, [
+      '#toTop',
+      '.to-top',
+    ]);
 
-  // Remove WhatsApp floating buttons
-  document.querySelectorAll('[data-whatsapp], .whatsapp-button, .float-button').forEach((el) => el.remove());
+    // Remove YouTube cookie consent overlays
+    // Found in captured DOM: <div class="video-embed__no-cookie">
+    WebImporter.DOMUtils.remove(element, [
+      '.video-embed__no-cookie',
+    ]);
 
-  // Clean empty divs
-  document.querySelectorAll('div:empty').forEach((el) => el.remove());
+    // Remove base64-encoded SVG icon images used for decorative arrows/icons
+    // Found in captured DOM: <img src="data:image/svg+xml;base64,...">
+    const svgIcons = element.querySelectorAll('img[src^="data:image/svg+xml"]');
+    svgIcons.forEach((img) => img.remove());
 
-  // Remove inline styles that might interfere
-  document.querySelectorAll('[style]').forEach((el) => {
-    el.removeAttribute('style');
-  });
+    // Remove "Pressemitteilung" label overlays on press release images
+    // Found in captured DOM: <div class="press-releases__item-media-shield">
+    WebImporter.DOMUtils.remove(element, [
+      '.press-releases__item-media-shield',
+    ]);
+  }
 
-  // Remove data attributes (cleanup)
-  document.querySelectorAll('*').forEach((el) => {
-    Array.from(el.attributes).forEach((attr) => {
-      if (attr.name.startsWith('data-') && !attr.name.includes('block')) {
-        el.removeAttribute(attr.name);
-      }
-    });
-  });
-
-  console.log('✅ DOM cleanup transformer completed');
+  if (hookName === TransformHook.afterTransform) {
+    // Remove remaining unwanted HTML elements
+    WebImporter.DOMUtils.remove(element, [
+      'noscript',
+      'link',
+      'source',
+    ]);
+  }
 }

@@ -1,25 +1,25 @@
 {
   "templates": [
     {
-      "name": "nescafe-homepage",
-      "urls": ["https://www.nescafe-dolcegusto.com.br/"],
-      "description": "Nescafé Dolce Gusto Brazil homepage with promotional carousel, product cards, and feature sections",
+      "name": "rossmann-homepage",
+      "urls": ["https://unternehmen.rossmann.de/"],
+      "description": "Rossmann corporate homepage with hero banner, company introduction, press releases/news cards, sustainability teaser, two-column brand teasers, video embed, and new stores CTA",
       "blocks": [
         {
-          "name": "carousel-promo",
-          "instances": [".homepage-banner", ".hero-carousel", "[data-block='carousel']"]
+          "name": "hero-corporate",
+          "instances": [".content-header"]
         },
         {
-          "name": "hero-promo",
-          "instances": [".promo-banner", ".hero-section", "[data-block='hero']"]
+          "name": "cards-news",
+          "instances": ["#c697.content-press-releases"]
         },
         {
-          "name": "cards-product",
-          "instances": [".product-grid", ".cards-container", "[data-block='cards']"]
-        },
-        {
-          "name": "columns-product",
-          "instances": [".feature-section", ".columns-layout", "[data-block='columns']"]
+          "name": "columns-teaser",
+          "instances": [
+            "#c370.content-teaser",
+            "#c360.content-teaser",
+            "#c690.content-text.bg-intensivrot"
+          ]
         }
       ]
     }

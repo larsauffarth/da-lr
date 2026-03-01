@@ -1,0 +1,158 @@
+/* Cards News - Rossmann corporate news grid */
+
+.cards-news > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.cards-news > ul > li {
+  background-color: var(--background-color);
+  border-bottom: 1px solid var(--color-gray-200);
+  padding: var(--spacing-lg) 0;
+}
+
+.cards-news > ul > li:last-child {
+  border-bottom: none;
+}
+
+.cards-news .cards-news-card-image {
+  display: none;
+}
+
+.cards-news .cards-news-card-body {
+  margin: 0;
+  font-size: var(--body-font-size-l);
+  color: var(--color-gray-800);
+  line-height: var(--line-height-normal);
+}
+
+.cards-news .cards-news-card-body strong {
+  display: block;
+  margin: 4px 0 8px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gray-800);
+}
+
+.cards-news .cards-news-card-body a:any-link {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--body-font-size-l);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.cards-news .cards-news-card-body a:hover {
+  color: var(--color-primary-dark);
+  text-decoration: none;
+}
+
+/* "mehr erfahren" arrow indicator */
+.cards-news .cards-news-card-body a::after {
+  content: '>';
+  display: inline-block;
+  font-size: 0.8em;
+  font-weight: var(--font-weight-bold);
+}
+
+/* Link after the cards list ("weitere Meldungen lesen") */
+.cards-news ~ p a:any-link {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--body-font-size-l);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cards-news ~ p a::after {
+  content: '>';
+  display: inline-block;
+  font-size: 0.8em;
+  font-weight: var(--font-weight-bold);
+}
+
+.cards-news ~ p a:hover {
+  color: var(--color-primary-dark);
+}
+
+/* Desktop: show first 3 as large list items, bottom 3 as small grid */
+@media (width >= 900px) {
+  .cards-news > ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  /* First 3 articles: large format */
+  .cards-news > ul > li:nth-child(-n+3) {
+    display: block;
+    padding: var(--spacing-lg) 0;
+    border-bottom: 1px solid var(--color-gray-200);
+  }
+
+  .cards-news > ul > li:nth-child(-n+3) .cards-news-card-image {
+    display: none;
+  }
+
+  /* Bottom row: 3 smaller cards in grid - show images */
+  .cards-news > ul > li:nth-child(n+4) {
+    border-bottom: none;
+    padding: 0;
+  }
+
+  .cards-news > ul > li:nth-child(n+4) .cards-news-card-image {
+    display: block;
+  }
+
+  .cards-news > ul > li:nth-child(n+4) .cards-news-card-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .cards-news > ul > li:nth-child(4) {
+    grid-column: 1;
+    grid-row: 4;
+  }
+
+  .cards-news > ul > li:nth-child(5) {
+    grid-column: 2;
+    grid-row: 4;
+  }
+
+  .cards-news > ul > li:nth-child(6) {
+    grid-column: 3;
+    grid-row: 4;
+  }
+
+  .cards-news > ul {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto auto 1fr;
+  }
+
+  .cards-news > ul > li:nth-child(-n+3) {
+    grid-column: 1 / -1;
+  }
+
+  .cards-news > ul > li:nth-child(n+4) .cards-news-card-body {
+    font-size: var(--body-font-size-s);
+    padding: var(--spacing-md);
+  }
+
+  .cards-news > ul > li:nth-child(n+4) .cards-news-card-body strong {
+    font-size: var(--body-font-size-s);
+  }
+
+  .cards-news > ul > li:nth-child(n+4) .cards-news-card-body a:any-link {
+    font-size: var(--body-font-size-s);
+  }
+}
