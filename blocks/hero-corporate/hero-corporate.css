@@ -3,11 +3,14 @@
   padding: 0;
 }
 
+/* Parent container: relative positioned with responsive height (like .content-header) */
 .hero-corporate {
   position: relative;
   padding: 0;
-  min-height: 300px;
+  margin-bottom: calc(28.85px + 0.32vw);
   overflow: hidden;
+  /* Responsive height: matches original calc(-21.67px + 39.67vw) at 768-1919px */
+  height: 305px;
 }
 
 .hero-corporate h1,
@@ -28,31 +31,81 @@
   color: var(--text-color);
 }
 
-.hero-corporate picture {
+/* pic-wrap equivalent: absolute, overflow hidden, skewed, border-radius */
+.hero-corporate > div {
   position: absolute;
-  z-index: -1;
-  inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 0 0 min(calc(8.15px + 4.68vw), 98px) 0;
+  transform: skew(-5.15deg, 5.15deg) translateX(2.25px);
+  transform-origin: 100% 0;
 }
 
-.hero-corporate img {
-  object-fit: cover;
+.hero-corporate picture {
+  display: block;
+  line-height: 0;
   width: 100%;
   height: 100%;
 }
 
-@media (width >= 600px) {
+/* content-header-img equivalent: absolute fill, counter-skew */
+.hero-corporate img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  right: 0;
+  bottom: 0;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+  transform: skew(5.15deg, -5.15deg) translateX(-2.35px) scale(0.991311, 0.991111);
+  transform-origin: 100% 0;
+}
+
+/* Responsive height breakpoints matching original */
+@media (width >= 360px) {
   .hero-corporate {
-    min-height: 350px;
+    height: calc(-0.29px + 84.8vw);
+  }
+}
+
+@media (width >= 768px) {
+  .hero-corporate {
+    height: calc(-21.67px + 39.67vw);
+  }
+
+  .hero-corporate img {
+    object-position: center top;
+  }
+}
+
+@media (width >= 992px) {
+  .hero-corporate > div {
+    transform: skew(-5.15deg, 5.15deg) translateX(4.5px);
+    transform-origin: 100% 0;
+  }
+
+  .hero-corporate img {
+    transform: matrix(0.992, -0.09, 0.09, 0.992, -4.5, 0);
+    transform-origin: 100% 0;
+  }
+}
+
+@media (width >= 1920px) {
+  .hero-corporate {
+    height: 740px;
+    margin-bottom: 35px;
+  }
+
+  .hero-corporate > div {
+    border-radius: 0 0 98px 0;
   }
 }
 
 @media (width >= 900px) {
-  .hero-corporate {
-    min-height: 400px;
-  }
-
   .hero-corporate h1,
   .hero-corporate h2,
   .hero-corporate h3,
