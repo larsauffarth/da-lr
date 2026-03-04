@@ -696,3 +696,85 @@ main .default-content-wrapper p > a.button::after {
 .section.deka-beige-bg .default-content-wrapper p > a.button::after {
   content: none;
 }
+
+/* ---- Deka Info Card Section (Online Banking announcement) ---- */
+
+/* stylelint-disable no-descending-specificity */
+.section.deka-info-card .default-content-wrapper h2 {
+  color: var(--deka-primary, #003745);
+  font-family: var(--deka-font, system-ui, -apple-system, sans-serif);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.25px;
+  margin: 0 0 16px;
+}
+
+.section.deka-info-card .default-content-wrapper h3 {
+  color: var(--deka-primary, #003745);
+  font-family: var(--deka-font, system-ui, -apple-system, sans-serif);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+  background: var(--deka-card-bg, #F5F9FA);
+  border: 1px solid var(--deka-border, #CDDBDF);
+  border-bottom: none;
+  padding: 24px 24px 16px;
+  margin: 0;
+}
+
+.section.deka-info-card .default-content-wrapper h3 ~ p {
+  color: var(--deka-primary, #003745);
+  font-family: var(--deka-font, system-ui, -apple-system, sans-serif);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  background: var(--deka-card-bg, #F5F9FA);
+  border-left: 1px solid var(--deka-border, #CDDBDF);
+  border-right: 1px solid var(--deka-border, #CDDBDF);
+  padding: 0 24px 8px;
+  margin: 0;
+}
+
+.section.deka-info-card .default-content-wrapper h3 ~ p:last-child {
+  border-bottom: 1px solid var(--deka-border, #CDDBDF);
+  padding: 24px;
+}
+
+.section.deka-info-card .default-content-wrapper h3 ~ p > a.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--deka-primary, #003745);
+  color: #fff;
+  border: 1px solid var(--deka-primary, #003745);
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: var(--deka-font, system-ui, -apple-system, sans-serif);
+  text-decoration: none;
+  border-radius: 0;
+  height: 42px;
+}
+
+.section.deka-info-card .default-content-wrapper h3 ~ p > a.button:hover {
+  background: var(--deka-secondary, #1A6B80);
+  border-color: var(--deka-secondary, #1A6B80);
+}
+
+.section.deka-info-card .default-content-wrapper h3 ~ p > a.button::after {
+  content: none;
+}
+/* stylelint-enable no-descending-specificity */
+
+@media (width >= 900px) {
+  .section.deka-info-card .default-content-wrapper h2 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .section.deka-info-card .default-content-wrapper h3 {
+    font-size: 32px;
+    line-height: 38.4px;
+  }
+}

@@ -16,6 +16,10 @@ Sind Sie bereits vom neuen Design von deka.de überzeugt? Dann haben wir eine gu
 
 [Zum Login](https://www.deka.de/mein-depot)
 
+| **Section Metadata** | |
+| --- | --- |
+| style | deka-info-card |
+
 ---
 
 ## Aktuelles & Hintergründe.
