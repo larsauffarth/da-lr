@@ -18,17 +18,17 @@
   --color-primary-light: #D91A3E;     /* Lighter red */
 
   /* Neutral Colors */
-  --color-white: #FFFFFF;
-  --color-black: #000000;
+  --color-white: #FFF;
+  --color-black: #000;
   --color-gray-100: #F5F5F5;          /* Light background */
   --color-gray-200: #E5E5E5;          /* Footer top bg, borders */
   --color-gray-300: #DADADA;          /* Subtle borders */
-  --color-gray-400: #BBBBBB;          /* Disabled text */
+  --color-gray-400: #BBB;          /* Disabled text */
   --color-gray-500: #808080;          /* Footer mid bg */
   --color-gray-600: #656565;          /* Secondary text */
-  --color-gray-700: #555555;          /* Body text alt */
+  --color-gray-700: #555;          /* Body text alt */
   --color-gray-800: #464646;          /* Primary text */
-  --color-gray-900: #333333;          /* Dark text */
+  --color-gray-900: #333;          /* Dark text */
 
   /* Semantic Colors */
   --background-color: var(--color-white);
@@ -44,8 +44,8 @@
    * ======================================== */
 
   /* Font Families */
-  --heading-font-family: 'Roboto', roboto-fallback, Arial, sans-serif;
-  --body-font-family: 'Roboto', roboto-fallback, Arial, sans-serif;
+  --heading-font-family: 'Roboto', roboto-fallback, arial, sans-serif;
+  --body-font-family: 'Roboto', roboto-fallback, arial, sans-serif;
 
   /* Body Font Sizes */
   --body-font-size-xl: 22px;
@@ -94,7 +94,6 @@
   --border-radius-md: 0px;
   --border-radius-lg: 0px;
   --border-radius-full: 9999px;
-
   --border-width-thin: 1px;
   --border-width-medium: 2px;
 
@@ -102,9 +101,9 @@
    * SHADOWS
    * ======================================== */
 
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.08);
-  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 5%);
+  --shadow-md: 0 2px 4px rgb(0 0 0 / 8%);
+  --shadow-card: 0 2px 8px rgb(0 0 0 / 8%);
 
   /* ========================================
    * TRANSITIONS
@@ -121,7 +120,6 @@
   --max-width-content: 1200px;
   --max-width-narrow: 900px;
   --max-width-wide: 1400px;
-
   --nav-height: 64px;
   --nav-height-mobile: 56px;
   --header-height: var(--nav-height);
@@ -180,7 +178,6 @@
     --heading-font-size-m: 22px;
     --heading-font-size-s: 19px;
     --heading-font-size-xs: 17px;
-
     --nav-height: 80px;
     --header-height: var(--nav-height);
   }
@@ -547,12 +544,14 @@ pre {
  * FORMS
  * ======================================== */
 
+/* stylelint-disable no-descending-specificity */
 input,
 textarea,
 select,
 button {
   font: inherit;
 }
+/* stylelint-enable no-descending-specificity */
 
 input[type="text"],
 input[type="email"],
@@ -575,7 +574,7 @@ input:focus,
 textarea:focus,
 select:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(195, 0, 45, 0.1);
+  box-shadow: 0 0 0 3px rgb(195 0 45 / 10%);
   outline: none;
 }
 
@@ -614,6 +613,7 @@ hr {
  * ======================================== */
 
 /* "mehr erfahren" and similar CTA links should be text links, not buttons */
+/* stylelint-disable-next-line no-descending-specificity */
 main .default-content-wrapper p > a.button:any-link {
   display: inline-flex;
   align-items: center;
@@ -630,6 +630,7 @@ main .default-content-wrapper p > a.button:any-link {
   white-space: normal;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 main .default-content-wrapper p > a.button:hover {
   background-color: transparent;
   color: var(--color-primary-dark);
@@ -652,4 +653,46 @@ main .default-content-wrapper p > a.button::after {
 .section.red-bg .default-content-wrapper p > a.button:hover {
   color: var(--color-white);
   opacity: 0.8;
+}
+
+/* ============================================
+   Deka Investments Section Styles
+   ============================================ */
+
+.section.deka-beige-bg {
+  background-color: var(--deka-warm-beige, #F5EFE4);
+  padding: 40px 0;
+  text-align: center;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.section.deka-beige-bg h2 {
+  color: var(--deka-primary, #003745);
+  font-family: var(--deka-font, system-ui, -apple-system, sans-serif);
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.section.deka-beige-bg .default-content-wrapper p > a.button {
+  display: inline-block;
+  background: var(--deka-primary, #003745);
+  color: #fff;
+  border: 2px solid var(--deka-primary, #003745);
+  padding: 8px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--deka-font, system-ui, -apple-system, sans-serif);
+  text-decoration: none;
+  border-radius: 0;
+}
+
+.section.deka-beige-bg .default-content-wrapper p > a.button:hover {
+  background: var(--deka-secondary, #1A6B80);
+  border-color: var(--deka-secondary, #1A6B80);
+}
+
+.section.deka-beige-bg .default-content-wrapper p > a.button::after {
+  content: none;
 }

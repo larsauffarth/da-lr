@@ -22,6 +22,39 @@
           ]
         }
       ]
+    },
+    {
+      "name": "deka-privatkunden-homepage",
+      "urls": ["https://www.deka.de/privatkunden"],
+      "description": "Deka Investments Privatkunden homepage with hero stage, online banking announcement, news/article cards, product offering cards, info banner columns, newsletter CTA, and award cards",
+      "blocks": [
+        {
+          "name": "hero-deka",
+          "instances": ["section.hero-stage"]
+        },
+        {
+          "name": "cards-deka",
+          "instances": [
+            "section.grid:has(.p-tag-label):has(.hauptthema__date)",
+            "section.grid:has(.p-tag-label):has(.auszeichnung)"
+          ],
+          "section": "News and award card grids"
+        },
+        {
+          "name": "cards-deka-product",
+          "instances": [
+            "section.grid:has(.angebots-kachel)"
+          ],
+          "section": "Product offering card grid"
+        },
+        {
+          "name": "columns-deka",
+          "instances": [
+            "section.grid:has(.infobereich)"
+          ],
+          "section": "50/50 text and image info banner"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,40 @@
+{
+  "variantName": "hero-deka",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-03-04T11:31:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.deka.de/privatkunden",
+    "originPage": "Deka Investments Privatkunden homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark-teal",
+    "density": "spacious",
+    "purpose": "investment-hero",
+    "imagePattern": "background-with-overlay"
+  },
+  "contentPattern": {
+    "structure": "background image + tag chip + heading + body + CTA + 3 sub-teaser cards",
+    "buttonCount": 4,
+    "imageCount": 4
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "financial services landing pages",
+      "investment product pages",
+      "Deka-branded pages with hero stage",
+      "pages needing hero with sub-navigation teasers"
+    ],
+    "notSuitableFor": [
+      "simple text-only heroes",
+      "image-only hero banners",
+      "pages without sub-teaser cards"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/deka/privatkunden"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-04T11:31:00.000Z"
+  }
+}

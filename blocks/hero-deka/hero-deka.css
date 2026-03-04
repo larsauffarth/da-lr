@@ -1,0 +1,258 @@
+/*
+ * Deka Investments - Hero Stage
+ * Dark teal hero with background image, text overlay panel, and 3 sub-teaser cards
+ * Source: https://www.deka.de/privatkunden
+ */
+
+/* Deka design tokens */
+:root {
+  --deka-primary: #003745;
+  --deka-secondary: #1A6B80;
+  --deka-accent-red: #E00;
+  --deka-card-bg: #F5F9FA;
+  --deka-warm-beige: #F5EFE4;
+  --deka-tag-text: #664C3D;
+  --deka-font: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+.hero-deka-container .hero-deka-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero-deka {
+  position: relative;
+  padding: 0;
+  min-height: 400px;
+  font-family: var(--deka-font);
+  overflow: hidden;
+}
+
+/* Background image */
+.hero-deka > div:first-child {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+}
+
+.hero-deka > div:first-child picture {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-deka > div:first-child img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Text overlay panel */
+.hero-deka > div:nth-child(2) {
+  position: relative;
+  z-index: 1;
+  background: rgb(255 255 255 / 92%);
+  padding: 24px;
+  margin: 24px 16px;
+  max-width: 500px;
+}
+
+/* General paragraph — must precede p:first-child for ascending specificity */
+.hero-deka > div:nth-child(2) p {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0 0 16px;
+}
+
+/* Tag chip */
+.hero-deka > div:nth-child(2) p:first-child {
+  display: inline-block;
+  background: var(--deka-warm-beige);
+  color: var(--deka-tag-text);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  margin: 0 0 12px;
+  line-height: 1.4;
+}
+
+.hero-deka > div:nth-child(2) h1,
+.hero-deka > div:nth-child(2) h2,
+.hero-deka > div:nth-child(2) h3 {
+  color: var(--deka-primary);
+  font-family: var(--deka-font);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 12px;
+}
+
+.hero-deka > div:nth-child(2) a.button {
+  display: inline-block;
+  background: var(--deka-primary);
+  color: #fff;
+  border: 2px solid var(--deka-primary);
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--deka-font);
+  text-decoration: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.hero-deka > div:nth-child(2) a.button:hover {
+  background: var(--deka-secondary);
+  border-color: var(--deka-secondary);
+}
+
+/* Sub-teaser cards (rows 3, 4, 5) */
+.hero-deka > div:nth-child(n+3) {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  padding: 16px;
+  margin: 0 16px 12px;
+}
+
+.hero-deka > div:nth-child(n+3) > div:first-child {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+}
+
+.hero-deka > div:nth-child(n+3) > div:first-child img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.hero-deka > div:nth-child(n+3) > div:last-child {
+  flex: 1;
+}
+
+.hero-deka > div:nth-child(n+3) > div:last-child p:first-child {
+  display: inline-block;
+  background: var(--deka-warm-beige);
+  color: var(--deka-tag-text);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  margin: 0 0 6px;
+  line-height: 1.4;
+}
+
+.hero-deka > div:nth-child(n+3) > div:last-child h2,
+.hero-deka > div:nth-child(n+3) > div:last-child h3,
+.hero-deka > div:nth-child(n+3) > div:last-child h4 {
+  color: var(--deka-primary);
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+
+.hero-deka > div:nth-child(n+3) > div:last-child a.button {
+  display: inline-block;
+  background: transparent;
+  color: var(--deka-primary);
+  border: 2px solid var(--deka-primary);
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0;
+}
+
+.hero-deka > div:nth-child(n+3) > div:last-child a.button:hover {
+  background: var(--deka-primary);
+  color: #fff;
+}
+
+/* No-image variant — higher compound specificity overrides base rules */
+.hero-deka.no-image {
+  background: var(--deka-primary);
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.hero-deka.no-image > div:nth-child(2) {
+  background: transparent;
+}
+
+/* stylelint-disable no-descending-specificity */
+.hero-deka.no-image > div:nth-child(2) h1,
+.hero-deka.no-image > div:nth-child(2) h2,
+.hero-deka.no-image > div:nth-child(2) h3,
+.hero-deka.no-image > div:nth-child(2) p {
+  color: #fff;
+}
+/* stylelint-enable no-descending-specificity */
+
+@media (width >= 900px) {
+  .hero-deka {
+    min-height: 500px;
+    padding-bottom: 120px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .hero-deka > div:first-child {
+    width: 100%;
+  }
+
+  .hero-deka > div:nth-child(2) {
+    margin: 40px;
+    padding: 32px;
+    max-width: 480px;
+    width: 100%;
+  }
+
+  .hero-deka > div:nth-child(2) h1,
+  .hero-deka > div:nth-child(2) h2 {
+    font-size: 30px;
+  }
+
+  .hero-deka > div:nth-child(n+3) {
+    flex: 1;
+    margin: 0 8px;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .hero-deka > div:nth-child(3) {
+    left: 16px;
+    right: calc(66.66% + 8px);
+  }
+
+  .hero-deka > div:nth-child(4) {
+    left: calc(33.33% + 8px);
+    right: calc(33.33% + 8px);
+  }
+
+  .hero-deka > div:nth-child(5) {
+    left: calc(66.66% + 8px);
+    right: 16px;
+  }
+}
+
+@media (width >= 1200px) {
+  .hero-deka > div:nth-child(2) {
+    margin: 60px;
+  }
+
+  .hero-deka > div:nth-child(3) {
+    left: 40px;
+  }
+
+  .hero-deka > div:nth-child(5) {
+    right: 40px;
+  }
+}

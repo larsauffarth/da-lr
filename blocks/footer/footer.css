@@ -137,3 +137,68 @@ footer .footer > div > .section:last-child .default-content-wrapper > p:last-chi
     gap: 4px;
   }
 }
+
+/* ============================================
+   Deka Investments - Footer Theme
+   Active only on pages with theme=deka metadata
+   ============================================ */
+
+body.deka footer .footer > div {
+  margin: 0;
+  max-width: unset;
+  padding: 0;
+}
+
+/* Section 1: Legal links row */
+body.deka footer .footer > div > .section:first-child {
+  background-color: var(--deka-primary, #003745);
+  color: #fff;
+  padding: 20px 30px;
+}
+
+body.deka footer .footer > div > .section:first-child .default-content-wrapper > ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 24px;
+  padding: 0;
+  margin: 0;
+}
+
+body.deka footer .footer > div > .section:first-child .default-content-wrapper > ul a:any-link {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  font-family: var(--deka-font, system-ui, -apple-system, sans-serif);
+}
+
+body.deka footer .footer > div > .section:first-child .default-content-wrapper > ul a:hover {
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+/* Section 2: Copyright / branding */
+body.deka footer .footer > div > .section:last-child {
+  background-color: var(--deka-primary, #003745);
+  border-top: 1px solid rgb(255 255 255 / 15%);
+  color: rgb(255 255 255 / 70%);
+  padding: 16px 30px;
+  text-align: center;
+}
+
+body.deka footer .footer > div > .section:last-child .default-content-wrapper > p {
+  font-size: 13px;
+  font-family: var(--deka-font, system-ui, -apple-system, sans-serif);
+  margin: 0;
+  color: rgb(255 255 255 / 70%);
+}
+
+@media (width < 600px) {
+  body.deka footer .footer > div > .section:first-child .default-content-wrapper > ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+}

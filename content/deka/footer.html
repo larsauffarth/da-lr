@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta
+  http-equiv="Content-Security-Policy"
+  content="script-src 'nonce-aem' 'strict-dynamic' 'unsafe-inline' http: https:; base-uri 'self'; object-src 'none';"
+  move-to-http-header="true"
+>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<!-- Preload self-hosted Roboto fonts for performance -->
+<link rel="preload" href="/fonts/roboto-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/roboto-bold.woff2" as="font" type="font/woff2" crossorigin>
+
+<script nonce="aem" src="/scripts/aem.js" type="module"></script>
+<script nonce="aem" src="/scripts/scripts.js" type="module"></script>
+<link rel="stylesheet" href="/styles/styles.css"/>
+</head>
+<body>
+<header></header>
+<main>
+<div><ul>
+<li><a href="https://www.deka.de/impressum">Impressum</a></li>
+<li><a href="https://www.deka.de/rechtliche-hinweise">Rechtliche Hinweise</a></li>
+<li><a href="https://www.deka.de/datenschutz">Datenschutz</a></li>
+<li><a href="https://www.deka.de/cookie-einstellungen">Cookie-Einstellungen</a></li>
+</ul></div>
+<div><p>Deka Investments | Eine Marke der DekaBank Deutsche Girozentrale</p></div>
+</main>
+<footer></footer>
+</body>
+</html>

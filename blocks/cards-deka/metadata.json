@@ -1,0 +1,40 @@
+{
+  "variantName": "cards-deka",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-03-04T11:31:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.deka.de/privatkunden",
+    "originPage": "Deka Investments Privatkunden homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light-teal",
+    "density": "bordered",
+    "purpose": "news-teaser",
+    "imagePattern": "bottom"
+  },
+  "contentPattern": {
+    "structure": "tag chip + date + heading + subtitle + body + CTA + image",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "news article teasers",
+      "award/credential showcases",
+      "blog post grids",
+      "Deka-branded content cards"
+    ],
+    "notSuitableFor": [
+      "product cards with prominent images",
+      "image-only galleries",
+      "cards without tag chips"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/deka/privatkunden"],
+    "reuseCount": 2,
+    "lastUsed": "2026-03-04T11:31:00.000Z"
+  }
+}

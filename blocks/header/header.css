@@ -274,6 +274,7 @@ header nav .nav-tools {
   grid-area: tools;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 header nav .nav-tools ul {
   list-style: none;
   padding: 0;
@@ -358,5 +359,183 @@ header .breadcrumbs ol li[aria-current] {
     display: block;
     max-width: 1264px;
     padding: 0 32px;
+  }
+}
+
+/* ============================================
+   Deka Investments - Two-Row Header Theme
+   Active only on pages with theme=deka metadata
+   Row 1: Dark teal utility bar (via ::before)
+   Row 2: White main nav with logo, links, CTAs
+   ============================================ */
+
+/* Wrapper: two-row layout with utility bar on top */
+body.deka header .nav-wrapper {
+  background-color: #fff;
+  position: relative;
+}
+
+/* Utility bar: dark teal strip at top */
+body.deka header .nav-wrapper::before {
+  content: 'Privatkunden   Kontakt   Suche';
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: var(--deka-primary, #003745);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  height: 44px;
+  padding: 0 56px;
+  letter-spacing: 0.02em;
+  font-family: var(--deka-font, system-ui, -apple-system, sans-serif);
+  white-space: pre;
+}
+
+/* Main nav row: white background */
+body.deka header nav {
+  background-color: #fff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+body.deka header nav a:any-link {
+  color: var(--deka-primary, #003745);
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+body.deka header nav a:hover {
+  color: var(--deka-secondary, #1a6b80);
+}
+
+/* Brand: Deka logo */
+body.deka header .nav-brand {
+  flex-basis: 120px;
+}
+
+body.deka header nav .nav-brand img {
+  width: 120px;
+  height: auto;
+}
+
+/* Remove button container wrapper styling from brand */
+body.deka header .nav-brand .button-container {
+  margin: 0;
+}
+
+body.deka header .nav-brand a.button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+}
+
+/* Hamburger: dark teal on white */
+body.deka header nav .nav-hamburger-icon,
+body.deka header nav .nav-hamburger-icon::before,
+body.deka header nav .nav-hamburger-icon::after {
+  background: var(--deka-primary, #003745);
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+body.deka header nav[aria-expanded='false'] .nav-hamburger-icon,
+body.deka header nav[aria-expanded='false'] .nav-hamburger-icon::before,
+body.deka header nav[aria-expanded='false'] .nav-hamburger-icon::after {
+  background: var(--deka-primary, #003745);
+}
+
+/* Nav sections: dark teal links */
+body.deka header nav .nav-sections ul {
+  font-size: 16px;
+}
+
+body.deka header nav .nav-sections ul > li {
+  font-weight: 400;
+}
+
+/* Reset button styling on nav section links - EDS decorateButtons adds .button class */
+body.deka header nav .nav-sections a.button {
+  background: transparent;
+  border: none;
+  color: var(--deka-primary, #003745);
+  padding: 0;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 0;
+}
+
+body.deka header nav .nav-sections a.button:hover {
+  background: transparent;
+  color: var(--deka-secondary, #1a6b80);
+}
+
+body.deka header nav .nav-sections .button-container {
+  margin: 0;
+}
+
+/* Dropdown on white background */
+body.deka header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul {
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+}
+
+body.deka header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul > li a {
+  color: var(--deka-primary, #003745);
+}
+
+/* Nav drop arrow: dark teal */
+body.deka header nav .nav-sections .nav-drop::after {
+  border-color: var(--deka-primary, #003745);
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+body.deka header nav .nav-tools a:any-link {
+  background-color: transparent;
+  color: var(--deka-primary, #003745);
+  font-weight: 400;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 0;
+  border: 1px solid transparent;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+body.deka header nav .nav-tools a:hover {
+  background-color: transparent;
+  color: var(--deka-secondary, #1a6b80);
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+body.deka header nav .nav-tools li:last-child a:any-link {
+  background-color: #e00;
+  color: #fff;
+  font-weight: 400;
+  padding: 8px 16px;
+  border: 1px solid #e00;
+  border-radius: 0;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+body.deka header nav .nav-tools li:last-child a:hover {
+  background-color: #c00;
+  color: #fff;
+}
+
+/* Mobile: hide utility bar text, show as colored bar only */
+@media (width < 900px) {
+  body.deka header .nav-wrapper::before {
+    font-size: 12px;
+    padding: 0 16px;
+    height: 36px;
+  }
+
+  body.deka header nav .nav-hamburger button {
+    background-color: #fff;
+  }
+
+  body.deka header nav[aria-expanded='true'] .nav-sections {
+    background-color: #fff;
   }
 }

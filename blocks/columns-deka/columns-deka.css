@@ -1,0 +1,110 @@
+/*
+ * Deka Investments - Columns Teaser (50/50 text + image)
+ * Bordered card layout with text left, image right
+ * Source: https://www.deka.de/privatkunden
+ */
+
+.columns-deka > div {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e0e0e0;
+  background-color: var(--deka-card-bg, #F5F9FA);
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.columns-deka > div:hover {
+  box-shadow: 0 4px 12px rgb(0 55 69 / 12%);
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.columns-deka > div > div {
+  order: 1;
+  padding: 24px;
+  font-family: var(--deka-font, system-ui, -apple-system, sans-serif);
+}
+
+.columns-deka > div > .columns-deka-img-col {
+  order: 0;
+  padding: 0;
+}
+
+.columns-deka img {
+  width: 100%;
+  display: block;
+}
+
+.columns-deka > div > .columns-deka-img-col img {
+  display: block;
+  object-fit: cover;
+}
+
+.columns-deka h2,
+.columns-deka h3 {
+  color: var(--deka-primary, #003745);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0 0 12px;
+}
+
+.columns-deka p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+  margin: 0 0 16px;
+}
+
+/* CTA button - filled Deka style */
+.columns-deka a.button {
+  display: inline-block;
+  background: var(--deka-primary, #003745);
+  color: #fff;
+  border: 2px solid var(--deka-primary, #003745);
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0;
+  transition: background 0.2s;
+}
+
+.columns-deka a.button:hover {
+  background: var(--deka-secondary, #1A6B80);
+  border-color: var(--deka-secondary, #1A6B80);
+}
+
+@media (width >= 900px) {
+  .columns-deka > div {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .columns-deka > div > div {
+    flex: 1;
+    order: unset;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 32px;
+  }
+
+  .columns-deka > div > .columns-deka-img-col {
+    padding: 0;
+  }
+
+  .columns-deka > div > .columns-deka-img-col img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .columns-deka h2,
+  .columns-deka h3 {
+    font-size: 22px;
+  }
+
+  .columns-deka p {
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,117 @@
+/*
+ * Deka Investments - Cards Product (Offering Grid)
+ * Product offering cards with 3+2 grid, tag chips, images, CTAs
+ * Source: https://www.deka.de/privatkunden
+ */
+
+.cards-deka-product > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 24px;
+}
+
+.cards-deka-product > ul > li {
+  border: 1px solid #e0e0e0;
+  background-color: var(--deka-card-bg, #F5F9FA);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.cards-deka-product > ul > li:hover {
+  box-shadow: 0 4px 12px rgb(0 55 69 / 12%);
+}
+
+.cards-deka-product .cards-deka-product-card-body {
+  padding: 20px;
+  font-family: var(--deka-font, system-ui, -apple-system, sans-serif);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* General paragraph — must precede more-specific p rules */
+.cards-deka-product .cards-deka-product-card-body p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+  margin: 0 0 16px;
+  flex: 1;
+}
+
+/* Tag chip */
+.cards-deka-product .cards-deka-product-card-body > p:first-child {
+  display: inline-block;
+  background: var(--deka-warm-beige, #F5EFE4);
+  color: var(--deka-tag-text, #664C3D);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  margin: 0 0 12px;
+  line-height: 1.4;
+  align-self: flex-start;
+}
+
+/* Heading */
+.cards-deka-product .cards-deka-product-card-body h2,
+.cards-deka-product .cards-deka-product-card-body h3,
+.cards-deka-product .cards-deka-product-card-body h4 {
+  color: var(--deka-primary, #003745);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0 0 8px;
+}
+
+/* CTA button - filled */
+.cards-deka-product .cards-deka-product-card-body a.button {
+  display: inline-block;
+  background: var(--deka-primary, #003745);
+  color: #fff;
+  border: 2px solid var(--deka-primary, #003745);
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0;
+  transition: background 0.2s;
+  align-self: flex-start;
+}
+
+.cards-deka-product .cards-deka-product-card-body a.button:hover {
+  background: var(--deka-secondary, #1A6B80);
+  border-color: var(--deka-secondary, #1A6B80);
+}
+
+/* Image */
+.cards-deka-product .cards-deka-product-card-image {
+  line-height: 0;
+}
+
+.cards-deka-product > ul > li img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+@media (width >= 600px) {
+  .cards-deka-product > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .cards-deka-product > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* 3+2 layout: last 2 items span the 3-col grid */
+  .cards-deka-product > ul > li:nth-last-child(2):nth-child(3n+1) {
+    grid-column: span 1;
+  }
+}
