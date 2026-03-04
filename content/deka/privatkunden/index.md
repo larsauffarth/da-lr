@@ -77,5 +77,5 @@ Sind Sie bereits vom neuen Design von deka.de überzeugt? Dann haben wir eine gu
 | og:image | https://www.deka.de/magnolia/.imaging/focalpoint/Wide/1280x/dam/jcr:9268f184-8eb0-4dad-9c8a-f3e235c853c1/Deka_de_KK_FSP_3000x1000px_Hero_Stage_sRGB.jpg |
 | keywords | Deka Investments, Fonds, Geldanlage, Vorsorgen, Sparen, Anlegen, Zertifikate, Altersvorsorge, regelmäßiges Sparen, Vermögen managen |
 | theme | deka |
-| nav | /content/deka/nav |
-| footer | /content/deka/footer |
+| nav | /deka/nav |
+| footer | /deka/footer |
