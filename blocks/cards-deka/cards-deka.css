@@ -80,6 +80,7 @@
 .cards-deka .cards-deka-card-body h3,
 .cards-deka .cards-deka-card-body h4 {
   color: var(--deka-primary, #003745);
+  font-family: var(--deka-font, system-ui, sans-serif);
   font-size: 24px;
   font-weight: 400;
   line-height: 1.2;

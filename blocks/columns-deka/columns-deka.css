@@ -42,6 +42,7 @@
 .columns-deka h2,
 .columns-deka h3 {
   color: var(--deka-primary, #003745);
+  font-family: var(--deka-font, system-ui, sans-serif);
   font-size: 20px;
   font-weight: 700;
   line-height: 1.3;

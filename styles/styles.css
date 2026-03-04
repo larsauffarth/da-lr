@@ -778,3 +778,27 @@ main .default-content-wrapper p > a.button::after {
     line-height: 38.4px;
   }
 }
+
+/* ---- Deka typography for section headings adjacent to Deka blocks ---- */
+
+/* stylelint-disable no-descending-specificity */
+.section[class*="deka"] .default-content-wrapper h2 {
+  font-family: var(--deka-font, system-ui, sans-serif);
+  color: var(--deka-primary, #003745);
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: 0.25px;
+}
+
+.section[class*="deka"] .default-content-wrapper p {
+  font-family: var(--deka-font, system-ui, sans-serif);
+}
+
+@media (width >= 900px) {
+  .section[class*="deka"] .default-content-wrapper h2 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+}
+/* stylelint-enable no-descending-specificity */
