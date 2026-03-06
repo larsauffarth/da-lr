@@ -593,7 +593,7 @@ main > .section.blau-content > div {
 
 /* Body-text equivalent – match source .article .body-text { margin: 0 0 1em 0; } */
 main .section.blau-content .default-content-wrapper {
-  margin: 0 0 1em;
+  margin-bottom: 1em;
 }
 
 /* Blau light-blue background (section-decent on blau.de) */
