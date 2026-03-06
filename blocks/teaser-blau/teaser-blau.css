@@ -30,18 +30,25 @@
 }
 
 .teaser-blau .teaser-blau-image {
+  display: flex;
+  justify-content: center;
   width: 100%;
   overflow: hidden;
+  margin: 10px 0 0;
 }
 
 .teaser-blau .teaser-blau-image picture img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
   object-fit: contain;
-  display: block;
+  display: inline;
 }
 
 .teaser-blau .teaser-blau-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 0 20px;
 }
 
@@ -50,6 +57,7 @@
   line-height: 20px;
   color: #000;
   margin: 10px 0 0;
+  text-align: center;
 }
 
 .teaser-blau .teaser-blau-content strong {
