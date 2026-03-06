@@ -7,7 +7,7 @@ export default function decorate(block) {
   rows.forEach((row) => {
     const cols = [...row.children];
     cols.forEach((col) => {
-      if (col.querySelector('picture')) {
+      if (col.querySelector('picture') || col.querySelector('img')) {
         col.classList.add('teaser-blau-image');
       } else {
         col.classList.add('teaser-blau-content');
@@ -15,8 +15,13 @@ export default function decorate(block) {
     });
   });
 
-  block.querySelectorAll('picture > img').forEach((img) => {
-    const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
-    img.closest('picture').replaceWith(optimizedPic);
+  block.querySelectorAll('img').forEach((img) => {
+    if (!img.closest('picture')) {
+      const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
+      img.replaceWith(optimizedPic);
+    } else {
+      const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
+      img.closest('picture').replaceWith(optimizedPic);
+    }
   });
 }

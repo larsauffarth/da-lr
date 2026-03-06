@@ -7,8 +7,8 @@ export default function decorate(block) {
   const cols = [...firstRow.children];
 
   if (cols.length >= 2) {
-    const imageCol = cols.find((col) => col.querySelector('picture'));
-    const textCol = cols.find((col) => !col.querySelector('picture'));
+    const imageCol = cols.find((col) => col.querySelector('picture') || col.querySelector('img'));
+    const textCol = cols.find((col) => !col.querySelector('picture') && !col.querySelector('img'));
 
     if (imageCol) imageCol.classList.add('hero-blau-image');
     if (textCol) textCol.classList.add('hero-blau-content');

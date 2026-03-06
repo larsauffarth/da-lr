@@ -6,7 +6,7 @@ export default function decorate(block) {
     const li = document.createElement('li');
     while (row.firstElementChild) li.append(row.firstElementChild);
     [...li.children].forEach((div) => {
-      if (div.children.length === 1 && div.querySelector('picture')) {
+      if (div.children.length === 1 && (div.querySelector('picture') || div.querySelector('img'))) {
         div.className = 'cards-blau-card-image';
       } else {
         div.className = 'cards-blau-card-body';
@@ -14,9 +14,14 @@ export default function decorate(block) {
     });
     ul.append(li);
   });
-  ul.querySelectorAll('picture > img').forEach((img) => {
-    const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
-    img.closest('picture').replaceWith(optimizedPic);
+  ul.querySelectorAll('img').forEach((img) => {
+    if (!img.closest('picture')) {
+      const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
+      img.replaceWith(optimizedPic);
+    } else {
+      const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
+      img.closest('picture').replaceWith(optimizedPic);
+    }
   });
   block.textContent = '';
   block.append(ul);
