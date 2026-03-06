@@ -1,0 +1,50 @@
+/* Callout Blau - Info/tip callout box for blau.de pages */
+
+/* Isolated styling - does not affect any other blocks */
+
+.callout-blau {
+  --blau-accent: #00b6f1;
+  --blau-font: 'Verdana', 'Tahoma', sans-serif;
+
+  font-family: var(--blau-font);
+  max-width: 960px;
+  margin: 16px auto;
+}
+
+.callout-blau .callout-blau-wrapper {
+  background-color: rgb(0 182 241 / 5%);
+  border-left: 3px solid var(--blau-accent);
+  padding: 20px 20px 20px 24px;
+  color: var(--blau-accent);
+}
+
+.callout-blau p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 8px;
+  color: #333;
+}
+
+.callout-blau strong {
+  color: var(--blau-accent);
+}
+
+.callout-blau ul {
+  margin: 8px 0 0;
+  padding-left: 20px;
+}
+
+.callout-blau ul li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.callout-blau a {
+  color: var(--blau-accent);
+  text-decoration: underline;
+}
+
+.callout-blau a:hover {
+  text-decoration: none;
+}

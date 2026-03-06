@@ -1,0 +1,98 @@
+/* Teaser Blau - Product promotional teaser for blau.de pages */
+
+/* Isolated styling - does not affect any other blocks */
+
+.teaser-blau {
+  --blau-primary: #0072bc;
+  --blau-accent: #00b6f1;
+  --blau-font: 'Verdana', 'Tahoma', sans-serif;
+
+  font-family: var(--blau-font);
+  max-width: 960px;
+  margin: 24px auto;
+  overflow: hidden;
+}
+
+.teaser-blau > div {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid #dbdcdc;
+  border-radius: 0;
+}
+
+.teaser-blau .teaser-blau-image {
+  flex: 0 0 40%;
+  overflow: hidden;
+}
+
+.teaser-blau .teaser-blau-image picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.teaser-blau .teaser-blau-content {
+  flex: 1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.teaser-blau .teaser-blau-content p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  margin: 0 0 12px;
+}
+
+.teaser-blau .teaser-blau-content strong {
+  color: var(--blau-primary);
+}
+
+.teaser-blau .teaser-blau-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+}
+
+.teaser-blau .teaser-blau-content ul li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  padding: 2px 0;
+}
+
+.teaser-blau .teaser-blau-content ul li strong {
+  color: var(--blau-primary);
+}
+
+.teaser-blau .teaser-blau-content a {
+  display: inline-block;
+  color: #000;
+  border: 2px solid var(--blau-accent);
+  border-radius: 25px;
+  padding: 10px 24px;
+  font-size: 16px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.2s, color 0.2s;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+.teaser-blau .teaser-blau-content a:hover {
+  background-color: var(--blau-accent);
+  color: #fff;
+}
+
+@media (width <= 768px) {
+  .teaser-blau > div {
+    flex-direction: column;
+  }
+
+  .teaser-blau .teaser-blau-image {
+    flex: none;
+  }
+}

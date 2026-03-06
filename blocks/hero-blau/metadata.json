@@ -1,0 +1,39 @@
+{
+  "variantName": "hero-blau",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-03-06T09:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.blau.de/guide/tipps/iphone-17e-groesse/",
+    "originPage": "Blau Guide - iPhone 17e Größe & Gewicht",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "blau-accent-blue",
+    "density": "compact",
+    "purpose": "article-header",
+    "imagePattern": "right-aligned"
+  },
+  "contentPattern": {
+    "structure": "H1 title + date + hero image (right)",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "guide article headers",
+      "blog post headers",
+      "Blau-branded content pages"
+    ],
+    "notSuitableFor": [
+      "full-width hero banners",
+      "hero with CTA buttons",
+      "product landing pages"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/blau/guide/tipps/iphone-17e-groesse"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-06T09:00:00.000Z"
+  }
+}

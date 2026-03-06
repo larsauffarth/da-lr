@@ -1,0 +1,71 @@
+/* Hero Blau - Article header block for blau.de guide pages */
+
+/* Isolated styling - does not affect any other blocks */
+
+.hero-blau {
+  --blau-primary: #0072bc;
+  --blau-accent: #00b6f1;
+  --blau-light: #e6f7fe;
+  --blau-font: 'Verdana', 'Tahoma', sans-serif;
+
+  background-color: var(--blau-accent);
+  color: #fff;
+  padding: 32px 24px;
+  font-family: var(--blau-font);
+}
+
+.hero-blau > div {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 32px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.hero-blau .hero-blau-image {
+  flex: 0 0 40%;
+  max-width: 40%;
+}
+
+.hero-blau .hero-blau-image picture img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-blau .hero-blau-content {
+  flex: 1;
+}
+
+.hero-blau h1 {
+  font-family: var(--blau-font);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #fff;
+  margin: 0 0 12px;
+}
+
+.hero-blau p {
+  color: #fff;
+  font-size: 14px;
+  margin: 0;
+  opacity: 0.9;
+}
+
+@media (width <= 768px) {
+  .hero-blau > div {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-blau .hero-blau-image {
+    flex: none;
+    max-width: 60%;
+  }
+
+  .hero-blau h1 {
+    font-size: 22px;
+  }
+}
