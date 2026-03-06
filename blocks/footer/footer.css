@@ -138,16 +138,399 @@ footer .footer > div > .section:last-child .default-content-wrapper > p:last-chi
   }
 }
 
-/* Blau theme footer overrides */
-body.blau footer .footer > div > .section:first-child {
+/* ================================================
+   Blau theme footer
+   Blau and Rossmann are mutually exclusive themes
+   (body.blau vs default), so descending specificity
+   relative to the Rossmann selectors above is safe.
+   ================================================ */
+
+/* stylelint-disable no-descending-specificity */
+
+/* Reset all Rossmann defaults for Blau */
+body.blau footer .footer > div > .section {
   background-color: transparent;
-  color: #0072BC;
+  color: var(--color-primary);
+  padding: 0;
+  text-align: left;
 }
 
-body.blau footer .footer > div > .section:first-child a:any-link {
-  color: #0072BC;
+body.blau footer .footer .default-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-body.blau footer .footer > div > .section:first-child .default-content-wrapper > h2 {
-  color: #0072BC;
+body.blau footer .footer a:any-link {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 400;
 }
+
+body.blau footer .footer a:hover {
+  text-decoration: underline;
+}
+
+body.blau footer .footer h2,
+body.blau footer .footer h3,
+body.blau footer .footer h4 {
+  color: var(--color-primary);
+  font-family: var(--body-font-family);
+}
+
+body.blau footer .footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+body.blau footer .footer li {
+  padding: 0;
+  margin: 0;
+}
+
+/* --- Section 1: Hotline bar --- */
+body.blau footer .section.footer-hotline {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 24px 0;
+}
+
+body.blau footer .section.footer-hotline .default-content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+body.blau footer .section.footer-hotline img {
+  width: 120px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+body.blau footer .section.footer-hotline h3 {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+body.blau footer .section.footer-hotline p {
+  color: #fff;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+body.blau footer .section.footer-hotline a:any-link {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+body.blau footer .section.footer-hotline a:hover {
+  text-decoration: underline;
+}
+
+/* Hide the image paragraph from the text flow on mobile */
+body.blau footer .section.footer-hotline .default-content-wrapper > p:first-child {
+  flex-shrink: 0;
+  margin: 0;
+  line-height: 0;
+}
+
+/* --- Section 2: Newsletter --- */
+body.blau footer .section.footer-newsletter {
+  padding: 32px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+body.blau footer .section.footer-newsletter h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+body.blau footer .section.footer-newsletter p {
+  margin: 0 0 16px;
+  font-size: 14px;
+}
+
+body.blau footer .section.footer-newsletter a.button:any-link {
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-primary);
+  color: #fff;
+  border: 2px solid var(--color-primary);
+  border-radius: 4px;
+  padding: 10px 32px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 0;
+}
+
+body.blau footer .section.footer-newsletter a.button:hover {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  text-decoration: none;
+}
+
+body.blau footer .section.footer-newsletter .button-container {
+  margin: 0;
+}
+
+/* --- Section 3: Awards --- */
+body.blau footer .section.footer-awards {
+  padding: 40px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+body.blau footer .section.footer-awards .default-content-wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr auto 1fr auto 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 0 16px;
+  align-items: start;
+}
+
+body.blau footer .section.footer-awards img {
+  width: 80px;
+  height: auto;
+}
+
+body.blau footer .section.footer-awards h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+body.blau footer .section.footer-awards .default-content-wrapper > p {
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+body.blau footer .section.footer-awards a:any-link {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* Override EDS button decoration for award links */
+body.blau footer .section.footer-awards a.button:any-link {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  padding: 0;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+  border-radius: 0;
+}
+
+body.blau footer .section.footer-awards a.button:hover {
+  background: none;
+  text-decoration: underline;
+}
+
+body.blau footer .section.footer-awards .button-container {
+  margin: 0;
+}
+
+/* Award images: place each in column 1, 3, 5 */
+body.blau footer .section.footer-awards .default-content-wrapper > p:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1 / 4;
+  margin: 0;
+}
+
+body.blau footer .section.footer-awards .default-content-wrapper > p:nth-child(5) {
+  grid-column: 3;
+  grid-row: 1 / 4;
+  margin: 0;
+}
+
+body.blau footer .section.footer-awards .default-content-wrapper > p:nth-child(9) {
+  grid-column: 5;
+  grid-row: 1 / 4;
+  margin: 0;
+}
+
+/* Award headings: column 2, 4, 6 row 1 */
+body.blau footer .section.footer-awards h4:nth-of-type(1) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+body.blau footer .section.footer-awards h4:nth-of-type(2) {
+  grid-column: 4;
+  grid-row: 1;
+}
+
+body.blau footer .section.footer-awards h4:nth-of-type(3) {
+  grid-column: 6;
+  grid-row: 1;
+}
+
+/* Award descriptions: column 2, 4, 6 row 2 */
+body.blau footer .section.footer-awards .default-content-wrapper > p:nth-child(3) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+body.blau footer .section.footer-awards .default-content-wrapper > p:nth-child(7) {
+  grid-column: 4;
+  grid-row: 2;
+}
+
+body.blau footer .section.footer-awards .default-content-wrapper > p:nth-child(11) {
+  grid-column: 6;
+  grid-row: 2;
+}
+
+/* Award links: column 2, 4, 6 row 3 */
+body.blau footer .section.footer-awards .default-content-wrapper > p:nth-child(4) {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+body.blau footer .section.footer-awards .default-content-wrapper > p:nth-child(8) {
+  grid-column: 4;
+  grid-row: 3;
+}
+
+body.blau footer .section.footer-awards .default-content-wrapper > p:nth-child(12) {
+  grid-column: 6;
+  grid-row: 3;
+}
+
+/* --- Section 4: Sitemap link directory --- */
+body.blau footer .section.footer-sitemap {
+  padding: 40px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+body.blau footer .section.footer-sitemap .default-content-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto 1fr;
+  grid-auto-flow: column;
+  gap: 0 32px;
+}
+
+body.blau footer .section.footer-sitemap h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
+body.blau footer .section.footer-sitemap h3 a:any-link {
+  font-weight: 700;
+}
+
+body.blau footer .section.footer-sitemap ul {
+  margin: 0;
+}
+
+body.blau footer .section.footer-sitemap li {
+  padding: 2px 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+body.blau footer .section.footer-sitemap li a:any-link {
+  font-weight: 400;
+}
+
+/* --- Section 5: Legal links --- */
+body.blau footer .section.footer-legal {
+  padding: 20px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+body.blau footer .section.footer-legal ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 24px;
+}
+
+body.blau footer .section.footer-legal li {
+  font-size: 14px;
+}
+
+body.blau footer .section.footer-legal li a:any-link {
+  font-weight: 400;
+}
+
+/* --- Section 6: Copyright --- */
+body.blau footer .section.footer-copyright {
+  padding: 16px 0;
+}
+
+body.blau footer .section.footer-copyright .default-content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+body.blau footer .section.footer-copyright p {
+  font-size: 14px;
+  margin: 0;
+}
+
+body.blau footer .section.footer-copyright img {
+  height: 16px;
+  width: auto;
+}
+
+/* Override EDS button decoration for copyright link */
+body.blau footer .section.footer-copyright a.button:any-link {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  padding: 0;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+  border-radius: 0;
+}
+
+body.blau footer .section.footer-copyright a.button:hover {
+  background: none;
+  text-decoration: underline;
+}
+
+body.blau footer .section.footer-copyright .button-container {
+  margin: 0;
+}
+
+/* --- Blau footer mobile --- */
+@media (width < 768px) {
+  body.blau footer .section.footer-hotline .default-content-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  body.blau footer .section.footer-awards .default-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  body.blau footer .section.footer-sitemap .default-content-wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: row;
+  }
+
+  body.blau footer .section.footer-legal ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+/* stylelint-enable no-descending-specificity */

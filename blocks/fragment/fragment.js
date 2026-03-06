@@ -19,7 +19,16 @@ import {
  */
 export async function loadFragment(path) {
   if (path) { //  && path.startsWith('/')
-    const resp = await fetch(`${path}.plain.html`);
+    let resp = await fetch(`${path}.plain.html`);
+    // local dev fallback: serve fragment from blocks directory
+    if (window.location.hostname === 'localhost') {
+      const pathParts = path.split('/').filter(Boolean);
+      const fragmentName = pathParts[pathParts.length - 1];
+      const prefix = pathParts.length > 1 ? pathParts[pathParts.length - 2] : '';
+      const localPath = `/blocks/${fragmentName}/${prefix}-${fragmentName}.plain.html`;
+      const localResp = await fetch(localPath);
+      if (localResp.ok) resp = localResp;
+    }
     if (resp.ok) {
       const main = document.createElement('main');
       main.innerHTML = await resp.text();
