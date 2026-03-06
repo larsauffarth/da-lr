@@ -1,0 +1,45 @@
+.comparison-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.comparison-table table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  font-size: var(--body-font-size-s);
+}
+
+@media (width >= 900px) {
+  .comparison-table table {
+    font-size: var(--body-font-size-m);
+  }
+}
+
+.comparison-table table thead tr {
+  border-top: 2px solid #dadada;
+  border-bottom: 2px solid #dadada;
+}
+
+.comparison-table table tbody tr {
+  border-bottom: 1px solid #dadada;
+}
+
+.comparison-table table th {
+  font-weight: 700;
+}
+
+.comparison-table table th,
+.comparison-table table td {
+  padding: 0.5em;
+  text-align: left;
+}
+
+.comparison-table table th p,
+.comparison-table table td p {
+  margin: 0;
+}
+
+.comparison-table table td p + p {
+  margin-top: 0.25em;
+}
