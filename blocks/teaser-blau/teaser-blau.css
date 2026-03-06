@@ -73,7 +73,7 @@
   color: var(--blau-primary);
 }
 
-.teaser-blau .teaser-blau-content a {
+body.blau .teaser-blau .teaser-blau-content a:any-link {
   display: inline-block;
   color: #000;
   background-color: transparent;
@@ -90,7 +90,8 @@
   margin-bottom: 8px;
 }
 
-.teaser-blau .teaser-blau-content a:hover {
+body.blau .teaser-blau .teaser-blau-content a:hover {
   background-color: rgba(0 0 0 / 5%);
   color: #000;
+  border-color: #000;
 }
