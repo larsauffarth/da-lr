@@ -167,11 +167,74 @@ async function loadEager(doc) {
  * Loads everything that doesn't need to be delayed.
  * @param {Element} doc The container element
  */
+/**
+ * Converts flattened comparison table paragraphs into a proper HTML table.
+ * Detects groups of [bold-label, value, value, value] after a "Vergleich" heading.
+ */
+function buildComparisonTable(main) {
+  const heading = main.querySelector('h2[id*="vergleich"]');
+  if (!heading) return;
+
+  const wrapper = heading.closest('.default-content-wrapper');
+  if (!wrapper) return;
+
+  const children = [...wrapper.children];
+  const headingIdx = children.indexOf(heading);
+  const startIdx = headingIdx + 2; // skip heading + intro paragraph
+
+  // Collect rows: each row is [bold-label-p, value-p, value-p, value-p]
+  const rows = [];
+  let i = startIdx;
+  while (i + 3 < children.length) {
+    const labelP = children[i];
+    if (labelP.tagName !== 'P') break;
+    const strong = labelP.querySelector(':scope > strong:only-child');
+    if (!strong) break;
+    const vals = [children[i + 1], children[i + 2], children[i + 3]];
+    if (vals.some((v) => v.tagName !== 'P' || v.querySelector('strong'))) break;
+    rows.push({ label: strong.textContent, values: vals.map((v) => v.textContent) });
+    i += 4;
+  }
+
+  if (rows.length < 2) return;
+
+  // Build a <table> element
+  const table = document.createElement('table');
+  table.style.width = '100%';
+  table.style.borderCollapse = 'collapse';
+  const tbody = document.createElement('tbody');
+  table.append(tbody);
+
+  rows.forEach((row) => {
+    const tr = document.createElement('tr');
+    tr.style.borderBottom = '1px solid #dadada';
+    const th = document.createElement('td');
+    th.style.padding = '0.5em';
+    th.style.fontWeight = '700';
+    th.textContent = row.label;
+    tr.append(th);
+    row.values.forEach((val) => {
+      const td = document.createElement('td');
+      td.style.padding = '0.5em';
+      td.textContent = val;
+      tr.append(td);
+    });
+    tbody.append(tr);
+  });
+
+  // Replace the flat paragraphs with the table
+  const removeParagraphs = children.slice(startIdx, startIdx + rows.length * 4);
+  children[startIdx].before(table);
+  removeParagraphs.forEach((p) => p.remove());
+}
+
 async function loadLazy(doc) {
   autolinkModals(doc);
 
   const main = doc.querySelector('main');
   await loadSections(main);
+
+  buildComparisonTable(main);
 
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
