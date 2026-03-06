@@ -158,6 +158,37 @@
 }
 
 /* ========================================
+ * BLAU THEME OVERRIDES
+ * ======================================== */
+
+@font-face {
+  font-family: CodePro;
+  src: url('/fonts/code-pro/codepro-regular-webfont.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: CodePro;
+  src: url('/fonts/code-pro/codepro-bold-webfont.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+body.blau {
+  --color-primary: #0072BC;
+  --color-primary-dark: #005A96;
+  --color-primary-light: #00B6F1;
+  --link-color: #0072BC;
+  --link-hover-color: #005A96;
+  --heading-font-family: 'CodePro', 'Verdana', 'Tahoma', sans-serif;
+  --body-font-family: 'CodePro', 'Verdana', 'Tahoma', sans-serif;
+  --nav-height: 64px;
+}
+
+/* ========================================
  * RESPONSIVE BREAKPOINTS
  * ======================================== */
 

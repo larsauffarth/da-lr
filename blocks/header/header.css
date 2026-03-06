@@ -360,3 +360,191 @@ header .breadcrumbs ol li[aria-current] {
     padding: 0 32px;
   }
 }
+
+/* ========================================
+ * BLAU THEME HEADER OVERRIDES
+ * ======================================== */
+
+/* Nav link colors */
+body.blau header nav a:any-link {
+  color: var(--color-primary);
+}
+
+body.blau header nav a:hover {
+  color: var(--color-primary-dark);
+}
+
+/* Hamburger icon color */
+body.blau header nav .nav-hamburger-icon,
+body.blau header nav .nav-hamburger-icon::before,
+body.blau header nav .nav-hamburger-icon::after {
+  color: var(--color-primary);
+}
+
+/* Brand logo sizing */
+body.blau header .nav-brand {
+  flex-basis: 78px;
+}
+
+body.blau header nav .nav-brand img {
+  width: 78px;
+}
+
+/* Nav sections styling – regular weight like original */
+body.blau header nav .nav-sections ul > li {
+  font-weight: 400;
+}
+
+body.blau header nav .nav-sections .default-content-wrapper > ul > li > p strong {
+  font-weight: 400;
+}
+
+/* Hide dropdown chevrons on desktop – original blau.de has no visible arrows */
+body.blau header nav .nav-sections .nav-drop::after {
+  display: none;
+}
+
+body.blau header nav .nav-sections .nav-drop {
+  padding-right: 0;
+}
+
+body.blau header nav .nav-sections ul > li > ul > li {
+  font-weight: 400;
+}
+
+/* Strip button decoration from nav-sections links (e.g. Service) */
+body.blau header nav .nav-sections a.button:any-link {
+  display: inline;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: var(--color-primary);
+  font-size: inherit;
+  font-weight: inherit;
+  white-space: nowrap;
+}
+
+body.blau header nav .nav-sections a.button:hover {
+  background: none;
+  border: none;
+  color: var(--color-primary-dark);
+}
+
+body.blau header nav .nav-sections .button-container {
+  display: inline;
+}
+
+/* Tools – plain blue links instead of CTA buttons */
+body.blau header nav .nav-tools a:any-link,
+body.blau header nav .nav-tools a.button:any-link {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--color-primary);
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: var(--body-font-size-s);
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+body.blau header nav .nav-tools a:hover,
+body.blau header nav .nav-tools a.button:hover {
+  background-color: transparent;
+  color: var(--color-primary-dark);
+  border: none;
+  text-decoration: underline;
+}
+
+body.blau header nav .nav-tools li:last-child a:any-link,
+body.blau header nav .nav-tools li:last-child a.button:any-link {
+  background-color: transparent;
+  color: var(--color-primary);
+}
+
+body.blau header nav .nav-tools li:last-child a:hover {
+  background-color: transparent;
+  color: var(--color-primary-dark);
+}
+
+body.blau header nav .nav-tools ul {
+  gap: 24px;
+}
+
+/* Desktop nav adjustments */
+@media (width >= 900px) {
+  body.blau header nav .nav-brand img {
+    width: 100px;
+  }
+
+  body.blau header .nav-brand {
+    flex-basis: 100px;
+  }
+
+  body.blau header nav .nav-sections ul {
+    font-size: 18px;
+    gap: 32px;
+  }
+
+  body.blau header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul {
+    background-color: var(--color-white);
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+    padding: 16px 20px;
+    width: 240px;
+  }
+
+  body.blau header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
+    border-bottom-color: var(--color-white);
+  }
+
+  body.blau header nav .nav-sections .default-content-wrapper > ul > li > ul > li a {
+    font-size: 14px;
+  }
+
+  body.blau header nav .nav-tools a:any-link {
+    font-size: var(--body-font-size-s);
+  }
+}
+
+/* Blau breadcrumbs */
+body.blau header .breadcrumbs {
+  padding: 10px 24px;
+  font-size: 14px;
+  border-top: 1px solid #f2f2f2;
+}
+
+body.blau header .breadcrumbs ol {
+  gap: 0;
+  align-items: center;
+}
+
+body.blau header .breadcrumbs ol li {
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+}
+
+body.blau header .breadcrumbs ol li a {
+  color: var(--color-primary);
+}
+
+body.blau header .breadcrumbs ol li:not(:last-child)::after {
+  content: '\203A';
+  padding: 0 5px;
+  font-size: 16px;
+  color: var(--color-primary);
+}
+
+body.blau header .breadcrumbs ol li[aria-current] {
+  color: var(--text-color);
+}
+
+@media (width >= 900px) {
+  body.blau header .breadcrumbs {
+    display: block;
+    padding: 10px 32px;
+    max-width: 1264px;
+  }
+}

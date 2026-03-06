@@ -127,7 +127,27 @@ async function buildBreadcrumbsFromNavTree(nav, currentUrl) {
       menuItem = menuItem.closest('ul')?.closest('li');
     } while (menuItem);
   } else if (currentUrl !== homeUrl) {
-    crumbs.unshift({ title: getMetadata('og:title'), url: currentUrl });
+    // Fallback: build breadcrumbs from URL path segments
+    const url = new URL(currentUrl);
+    const segments = url.pathname.split('/').filter(Boolean);
+    // Remove leading site prefix (e.g. "blau") if present
+    const navMeta = getMetadata('nav');
+    const sitePrefix = navMeta ? navMeta.split('/').filter(Boolean)[0] : '';
+    const pathSegments = sitePrefix && segments[0] === sitePrefix
+      ? segments.slice(1) : segments;
+
+    // Build crumbs from path segments (exclude last = current page)
+    let accumulated = sitePrefix ? `/${sitePrefix}` : '';
+    pathSegments.slice(0, -1).forEach((seg) => {
+      accumulated += `/${seg}`;
+      const title = seg.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+      crumbs.push({ title, url: `${url.origin}${accumulated}/` });
+    });
+
+    // Current page from metadata
+    const pageTitle = getMetadata('og:title') || pathSegments[pathSegments.length - 1]
+      ?.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()) || '';
+    crumbs.push({ title: pageTitle, url: null });
   }
 
   const placeholders = await fetchPlaceholders();
