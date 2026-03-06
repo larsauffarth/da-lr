@@ -32,14 +32,12 @@ main > .section > .hero-blau-wrapper {
 }
 
 .hero-blau > div {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0;
+  display: block;
+  overflow: hidden;
 }
 
 .hero-blau .hero-blau-content {
-  flex: 1;
+  display: block;
 }
 
 .hero-blau p {
@@ -50,9 +48,9 @@ main > .section > .hero-blau-wrapper {
 }
 
 .hero-blau .hero-blau-image {
-  flex: 0 0 auto;
+  float: right;
   max-width: 43%;
-  margin-left: 14px;
+  margin: 0 0 0 14px;
 }
 
 .hero-blau .hero-blau-image p {
@@ -76,14 +74,13 @@ body.blau .hero-blau h1 {
 
 @media (width <= 768px) {
   .hero-blau > div {
-    flex-direction: column;
     text-align: center;
   }
 
   .hero-blau .hero-blau-image {
-    flex: none;
+    float: none;
     max-width: 60%;
-    margin-left: 0;
+    margin: 0 auto;
   }
 
   .hero-blau h1 {
