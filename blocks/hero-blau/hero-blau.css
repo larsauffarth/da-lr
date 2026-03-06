@@ -32,12 +32,15 @@ main > .section > .hero-blau-wrapper {
 }
 
 .hero-blau > div {
-  display: block;
-  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .hero-blau .hero-blau-content {
-  display: block;
+  flex: 0 1 55%;
+  min-width: 0;
 }
 
 .hero-blau p {
@@ -48,9 +51,10 @@ main > .section > .hero-blau-wrapper {
 }
 
 .hero-blau .hero-blau-image {
-  float: right;
+  flex: 0 0 auto;
   max-width: 43%;
-  margin: 0 0 0 14px;
+  margin-left: 14px;
+  order: 1;
 }
 
 .hero-blau .hero-blau-image p {
@@ -74,13 +78,18 @@ body.blau .hero-blau h1 {
 
 @media (width <= 768px) {
   .hero-blau > div {
+    flex-direction: column;
     text-align: center;
   }
 
+  .hero-blau .hero-blau-content {
+    flex: 0 0 auto;
+  }
+
   .hero-blau .hero-blau-image {
-    float: none;
     max-width: 60%;
     margin: 0 auto;
+    order: 0;
   }
 
   .hero-blau h1 {
