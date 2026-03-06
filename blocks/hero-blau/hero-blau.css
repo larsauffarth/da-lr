@@ -65,7 +65,7 @@ main > .section > .hero-blau-wrapper {
   display: block;
 }
 
-.hero-blau h1 {
+body.blau .hero-blau h1 {
   font-family: var(--blau-font);
   font-size: 42px;
   font-weight: 400;
