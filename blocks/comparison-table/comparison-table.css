@@ -26,12 +26,14 @@
 }
 
 .comparison-table table th {
-  font-weight: 700;
+  font-family: 'CodeProBold', Verdana, Tahoma, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 .comparison-table table th,
 .comparison-table table td {
-  padding: 0.5em;
+  padding: 12px 30px 12px 12px;
   text-align: left;
 }
 

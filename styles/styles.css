@@ -204,9 +204,25 @@ body.blau {
   --heading-font-size-s: 16px;
   --heading-font-size-xs: 14px;
 
-  /* Links: purple with bold font */
-  --link-color: #7814B3;
-  --link-hover-color: #5A0E8A;
+  /* Links: blue color, normal weight */
+  --link-color: #0072BC;
+  --link-hover-color: #005A96;
+
+  /* Buttons: orange primary, blue secondary */
+  --button-primary-bg: #FFA922;
+  --button-primary-text: #000;
+  --button-primary-border: #FFA922;
+  --button-primary-bg-hover: #E89500;
+  --button-primary-text-hover: #000;
+  --button-secondary-bg: #0072BC;
+  --button-secondary-text: #fff;
+  --button-secondary-border: #0072BC;
+  --button-secondary-bg-hover: #005A96;
+  --button-secondary-text-hover: #fff;
+  --button-border-radius: 2px;
+  --button-padding-y: 15px;
+  --button-padding-x: 40px;
+  --border-width-medium: 1px;
 
   /* Layout */
   --nav-height: 64px;
@@ -725,25 +741,44 @@ main .section .default-content-wrapper p > a.button::after {
 
 /* stylelint-disable no-descending-specificity */
 
-/* Blau headings: blue color, tight line-height */
-body.blau h1,
-body.blau h2,
-body.blau h3,
-body.blau h4,
-body.blau h5,
-body.blau h6 {
+/* Blau headings: blue color, tight line-height, CodeProBold face */
+body.blau :is(h1, h2, h3, h4, h5, h6) {
   color: #0072BC;
   line-height: 1.1;
+  font-family: 'CodeProBold', 'Verdana', 'Tahoma', sans-serif;
+  font-weight: 400;
 }
 
-/* Blau links: bold font-weight, purple color */
+/* Blau paragraph margins */
+body.blau p {
+  margin: 0 0 10px;
+}
+
+/* Blau H2 margins */
+body.blau h2 {
+  margin: 20px 0;
+}
+
+/* Blau links: normal weight, blue color */
 body.blau a:any-link {
-  font-weight: 700;
+  font-weight: 400;
 }
 
-/* Blau buttons should keep standard bold, not link bold */
+/* Blau buttons: override link weight back to bold */
 body.blau a.button:any-link {
   font-weight: var(--font-weight-bold);
+}
+
+/* Blau secondary buttons: slightly smaller padding */
+body.blau a.button.secondary:any-link,
+body.blau button.secondary {
+  padding: 12px 30px;
+}
+
+/* Blau UL margin/padding */
+body.blau ul {
+  margin: 0 0 10px;
+  padding: 0 0 0 20px;
 }
 
 /* stylelint-enable no-descending-specificity */

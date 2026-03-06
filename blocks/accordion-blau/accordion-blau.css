@@ -8,8 +8,8 @@
   --blau-font: 'Verdana', 'Tahoma', sans-serif;
 
   font-family: var(--blau-font);
-  max-width: 960px;
-  margin: 24px auto;
+  max-width: 100%;
+  margin: 0 0 20px;
 }
 
 .accordion-blau details.accordion-blau-item {
@@ -22,11 +22,12 @@
 
 .accordion-blau details summary.accordion-blau-item-label {
   position: relative;
-  padding: 16px 48px 16px 16px;
+  padding: 15px 40px 15px 25px;
   cursor: pointer;
   list-style: none;
-  font-size: 16px;
-  font-weight: 700;
+  font-family: 'CodeProBold', Verdana, Tahoma, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
   color: var(--blau-primary);
   line-height: 1.4;
   transition: background-color 0.2s;

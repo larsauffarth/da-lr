@@ -8,9 +8,10 @@
   --blau-font: 'Verdana', 'Tahoma', sans-serif;
 
   font-family: var(--blau-font);
-  max-width: 960px;
+  max-width: 100%;
   margin: 24px auto;
   overflow: hidden;
+  background-color: #F5F5F7;
 }
 
 .teaser-blau > div {
@@ -71,10 +72,12 @@
 .teaser-blau .teaser-blau-content a {
   display: inline-block;
   color: #000;
-  border: 2px solid var(--blau-accent);
-  border-radius: 25px;
-  padding: 10px 24px;
+  background-color: #FFA922;
+  border: 1px solid #FFA922;
+  border-radius: 2px;
+  padding: 15px 40px;
   font-size: 16px;
+  font-weight: 700;
   text-decoration: none;
   text-align: center;
   transition: background-color 0.2s, color 0.2s;
@@ -83,8 +86,8 @@
 }
 
 .teaser-blau .teaser-blau-content a:hover {
-  background-color: var(--blau-accent);
-  color: #fff;
+  background-color: #E89500;
+  color: #000;
 }
 
 @media (width <= 768px) {

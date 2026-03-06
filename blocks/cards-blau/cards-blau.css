@@ -8,7 +8,7 @@
   --blau-font: 'Verdana', 'Tahoma', sans-serif;
 
   font-family: var(--blau-font);
-  max-width: 960px;
+  max-width: 100%;
   margin: 24px auto;
   padding: 0;
 }
@@ -71,10 +71,12 @@
 .cards-blau .cards-blau-card-body a {
   display: inline-block;
   color: #000;
-  border: 2px solid var(--blau-accent);
-  border-radius: 25px;
-  padding: 8px 20px;
+  background-color: #FFA922;
+  border: 1px solid #FFA922;
+  border-radius: 2px;
+  padding: 12px 30px;
   font-size: 14px;
+  font-weight: 700;
   text-decoration: none;
   text-align: center;
   transition: background-color 0.2s, color 0.2s;
@@ -82,8 +84,8 @@
 }
 
 .cards-blau .cards-blau-card-body a:hover {
-  background-color: var(--blau-accent);
-  color: #fff;
+  background-color: #E89500;
+  color: #000;
 }
 
 @media (width <= 768px) {

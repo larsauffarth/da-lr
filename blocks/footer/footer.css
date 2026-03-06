@@ -137,3 +137,17 @@ footer .footer > div > .section:last-child .default-content-wrapper > p:last-chi
     gap: 4px;
   }
 }
+
+/* Blau theme footer overrides */
+body.blau footer .footer > div > .section:first-child {
+  background-color: transparent;
+  color: #0072BC;
+}
+
+body.blau footer .footer > div > .section:first-child a:any-link {
+  color: #0072BC;
+}
+
+body.blau footer .footer > div > .section:first-child .default-content-wrapper > h2 {
+  color: #0072BC;
+}
