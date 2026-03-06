@@ -510,6 +510,18 @@ main .section.gray-bg {
   padding: var(--spacing-2xl) 0;
 }
 
+/* Blau light-blue section (section-decent on blau.de) */
+main .section.blau-grey-bg {
+  background-color: #e6f7fe;
+  margin: 0;
+  padding: 32px 0 0;
+}
+
+main > .section.blau-grey-bg > div {
+  padding: 0 10px;
+  max-width: 1160px;
+}
+
 /* ========================================
  * UTILITY CLASSES
  * ======================================== */
