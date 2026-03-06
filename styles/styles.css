@@ -581,7 +581,7 @@ main .section.gray-bg {
 
 /* Blau content sections – constrained layout for all blau article sections */
 main .section.blau-content {
-  margin: 0 0 20px;
+  margin: 32px 0 0;
 }
 
 main > .section.blau-content > div {
@@ -589,11 +589,6 @@ main > .section.blau-content > div {
   max-width: 1160px;
   margin: 0 auto;
   box-sizing: border-box;
-}
-
-/* Body-text equivalent – match source .article .body-text { margin: 0 0 1em 0; } */
-main .section.blau-content .default-content-wrapper {
-  margin-bottom: 1em;
 }
 
 /* Blau light-blue background (section-decent on blau.de) */
