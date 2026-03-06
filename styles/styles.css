@@ -18,17 +18,17 @@
   --color-primary-light: #D91A3E;     /* Lighter red */
 
   /* Neutral Colors */
-  --color-white: #FFFFFF;
-  --color-black: #000000;
+  --color-white: #FFF;
+  --color-black: #000;
   --color-gray-100: #F5F5F5;          /* Light background */
   --color-gray-200: #E5E5E5;          /* Footer top bg, borders */
   --color-gray-300: #DADADA;          /* Subtle borders */
-  --color-gray-400: #BBBBBB;          /* Disabled text */
+  --color-gray-400: #BBB;          /* Disabled text */
   --color-gray-500: #808080;          /* Footer mid bg */
   --color-gray-600: #656565;          /* Secondary text */
-  --color-gray-700: #555555;          /* Body text alt */
+  --color-gray-700: #555;          /* Body text alt */
   --color-gray-800: #464646;          /* Primary text */
-  --color-gray-900: #333333;          /* Dark text */
+  --color-gray-900: #333;          /* Dark text */
 
   /* Semantic Colors */
   --background-color: var(--color-white);
@@ -44,8 +44,8 @@
    * ======================================== */
 
   /* Font Families */
-  --heading-font-family: 'Roboto', roboto-fallback, Arial, sans-serif;
-  --body-font-family: 'Roboto', roboto-fallback, Arial, sans-serif;
+  --heading-font-family: 'Roboto', roboto-fallback, arial, sans-serif;
+  --body-font-family: 'Roboto', roboto-fallback, arial, sans-serif;
 
   /* Body Font Sizes */
   --body-font-size-xl: 22px;
@@ -94,7 +94,6 @@
   --border-radius-md: 0px;
   --border-radius-lg: 0px;
   --border-radius-full: 9999px;
-
   --border-width-thin: 1px;
   --border-width-medium: 2px;
 
@@ -102,9 +101,9 @@
    * SHADOWS
    * ======================================== */
 
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.08);
-  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 5%);
+  --shadow-md: 0 2px 4px rgb(0 0 0 / 8%);
+  --shadow-card: 0 2px 8px rgb(0 0 0 / 8%);
 
   /* ========================================
    * TRANSITIONS
@@ -121,7 +120,6 @@
   --max-width-content: 1200px;
   --max-width-narrow: 900px;
   --max-width-wide: 1400px;
-
   --nav-height: 64px;
   --nav-height-mobile: 56px;
   --header-height: var(--nav-height);
@@ -180,7 +178,6 @@
     --heading-font-size-m: 22px;
     --heading-font-size-s: 19px;
     --heading-font-size-xs: 17px;
-
     --nav-height: 80px;
     --header-height: var(--nav-height);
   }
@@ -301,6 +298,7 @@ a:focus-visible {
 
 a.button:any-link,
 button {
+  font: inherit;
   box-sizing: border-box;
   display: inline-block;
   max-width: 100%;
@@ -559,8 +557,7 @@ pre {
 
 input,
 textarea,
-select,
-button {
+select {
   font: inherit;
 }
 
@@ -585,7 +582,7 @@ input:focus,
 textarea:focus,
 select:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(195, 0, 45, 0.1);
+  box-shadow: 0 0 0 3px rgb(195 0 45 / 10%);
   outline: none;
 }
 
@@ -624,7 +621,7 @@ hr {
  * ======================================== */
 
 /* "mehr erfahren" and similar CTA links should be text links, not buttons */
-main .default-content-wrapper p > a.button:any-link {
+main .section .default-content-wrapper p > a.button:any-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -640,14 +637,14 @@ main .default-content-wrapper p > a.button:any-link {
   white-space: normal;
 }
 
-main .default-content-wrapper p > a.button:hover {
+main .section .default-content-wrapper p > a.button:hover {
   background-color: transparent;
   color: var(--color-primary-dark);
   border: none;
   text-decoration: none;
 }
 
-main .default-content-wrapper p > a.button::after {
+main .section .default-content-wrapper p > a.button::after {
   content: '>';
   display: inline-block;
   font-size: 0.8em;
