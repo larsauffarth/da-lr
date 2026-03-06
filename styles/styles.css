@@ -508,16 +508,19 @@ main .section.gray-bg {
   padding: var(--spacing-2xl) 0;
 }
 
-/* Blau light-blue section (section-decent on blau.de) */
-main .section.blau-grey-bg {
-  background-color: #e6f7fe;
-  margin: 0;
-  padding: 32px 0 0;
+/* Blau content sections – constrained layout for all blau article sections */
+main .section.blau-content {
+  margin: 32px 0 0;
 }
 
-main > .section.blau-grey-bg > div {
+main > .section.blau-content > div {
   padding: 0 10px;
   max-width: 1160px;
+}
+
+/* Blau light-blue background (section-decent on blau.de) */
+main .section.blau-grey-bg {
+  background-color: #e6f7fe;
 }
 
 /* ========================================
