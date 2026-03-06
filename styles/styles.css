@@ -594,6 +594,8 @@ main > .section.blau-content > div {
 /* Blau light-blue background (section-decent on blau.de) */
 main .section.blau-grey-bg {
   background-color: #e6f7fe;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 /* ========================================
