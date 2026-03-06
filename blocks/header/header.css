@@ -366,10 +366,11 @@ header .breadcrumbs ol li[aria-current] {
  * BLAU THEME HEADER OVERRIDES
  * ======================================== */
 
-/* Nav link colors */
+/* Nav link colors – regular weight (not bold like body links) */
 /* stylelint-disable-next-line no-descending-specificity */
 body.blau header nav a:any-link {
   color: var(--color-primary);
+  font-weight: 400;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
@@ -534,6 +535,7 @@ body.blau header .breadcrumbs ol li {
 /* stylelint-disable-next-line no-descending-specificity */
 body.blau header .breadcrumbs ol li a {
   color: var(--color-primary);
+  font-weight: 400;
 }
 
 body.blau header .breadcrumbs ol li:not(:last-child)::after {
