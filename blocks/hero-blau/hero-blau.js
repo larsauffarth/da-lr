@@ -12,6 +12,11 @@ export default function decorate(block) {
 
     if (imageCol) imageCol.classList.add('hero-blau-image');
     if (textCol) textCol.classList.add('hero-blau-content');
+
+    // Place image before content so float:right works (text wraps around image)
+    if (imageCol && textCol && firstRow.firstElementChild !== imageCol) {
+      firstRow.insertBefore(imageCol, textCol);
+    }
   } else if (cols.length === 1) {
     cols[0].classList.add('hero-blau-content');
   }
