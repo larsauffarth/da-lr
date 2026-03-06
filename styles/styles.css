@@ -587,6 +587,7 @@ main .section.blau-content {
 main > .section.blau-content > div {
   padding: 0 10px;
   max-width: 1160px;
+  margin: 0 auto;
   box-sizing: border-box;
 }
 
