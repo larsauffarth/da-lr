@@ -45,11 +45,13 @@
 }
 
 .teaser-blau .teaser-blau-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   padding: 0 20px;
+  text-align: center;
+}
+
+.teaser-blau .teaser-blau-content .button-container {
+  display: inline;
+  margin: 0;
 }
 
 .teaser-blau .teaser-blau-content p {
