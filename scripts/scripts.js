@@ -228,6 +228,28 @@ function buildComparisonTable(main) {
   removeParagraphs.forEach((p) => p.remove());
 }
 
+/**
+ * Rewrites ToC anchor links to target local heading IDs.
+ * Finds OL links pointing to external anchors and maps them to page headings by text.
+ */
+function fixTocAnchors(main) {
+  const ols = main.querySelectorAll('.default-content-wrapper ol');
+  ols.forEach((ol) => {
+    const links = ol.querySelectorAll('a[href*="#"]');
+    if (links.length < 2) return;
+
+    links.forEach((a) => {
+      const linkText = a.textContent.trim();
+      const headings = main.querySelectorAll('h2');
+      headings.forEach((h) => {
+        if (h.textContent.trim() === linkText && h.id) {
+          a.setAttribute('href', `#${h.id}`);
+        }
+      });
+    });
+  });
+}
+
 async function loadLazy(doc) {
   autolinkModals(doc);
 
@@ -235,6 +257,7 @@ async function loadLazy(doc) {
   await loadSections(main);
 
   buildComparisonTable(main);
+  fixTocAnchors(main);
 
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
