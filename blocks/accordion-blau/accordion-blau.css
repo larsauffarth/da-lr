@@ -5,7 +5,7 @@
 .accordion-blau {
   --blau-primary: #0072bc;
   --blau-accent: #00b6f1;
-  --blau-font: 'Verdana', 'Tahoma', sans-serif;
+  --blau-font: 'CodeProRegular', 'Verdana', 'Tahoma', sans-serif;
 
   font-family: var(--blau-font);
   max-width: 100%;
@@ -64,7 +64,7 @@
 
 .accordion-blau details .accordion-blau-item-body p {
   font-size: 14px;
-  line-height: 1.6;
-  color: #333;
-  margin: 0 0 8px;
+  line-height: 20px;
+  color: #000;
+  margin: 0 0 10px;
 }

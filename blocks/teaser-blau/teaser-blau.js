@@ -15,6 +15,18 @@ export default function decorate(block) {
     });
   });
 
+  // Detect specs variant: content has a <ul> where <li> items start with <strong>
+  const content = block.querySelector('.teaser-blau-content');
+  if (content) {
+    const ul = content.querySelector('ul');
+    if (ul) {
+      const firstLi = ul.querySelector('li');
+      if (firstLi && firstLi.querySelector('strong')) {
+        block.classList.add('teaser-blau-specs');
+      }
+    }
+  }
+
   block.querySelectorAll('img').forEach((img) => {
     if (!img.closest('picture')) {
       const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);

@@ -105,3 +105,115 @@ body.blau .teaser-blau .teaser-blau-content a:hover {
   color: #000;
   border-color: #000;
 }
+
+/* ================================================
+   Specs variant: side-by-side layout (image left, specs right)
+   ================================================ */
+
+.teaser-blau.teaser-blau-specs {
+  background-color: transparent;
+}
+
+.teaser-blau.teaser-blau-specs > div {
+  position: relative;
+  overflow: hidden;
+  min-height: 295px;
+}
+
+.teaser-blau.teaser-blau-specs .teaser-blau-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 35%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  display: block;
+}
+
+.teaser-blau.teaser-blau-specs .teaser-blau-image picture {
+  display: block;
+  height: 100%;
+}
+
+.teaser-blau.teaser-blau-specs .teaser-blau-image picture img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  display: block;
+}
+
+.teaser-blau.teaser-blau-specs .teaser-blau-content {
+  padding: 25px 25px 25px 37%;
+  margin-left: 25px;
+  text-align: left;
+}
+
+.teaser-blau.teaser-blau-specs .teaser-blau-content p {
+  text-align: left;
+  margin: 0 0 10px;
+}
+
+.teaser-blau.teaser-blau-specs .teaser-blau-content p:first-child {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--blau-primary);
+  font-family: 'CodeProBold', 'Verdana', 'Tahoma', sans-serif;
+  margin: 0 0 10px;
+}
+
+.teaser-blau.teaser-blau-specs .teaser-blau-content ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 0 0 10px;
+}
+
+.teaser-blau.teaser-blau-specs .teaser-blau-content ul li {
+  font-size: 14px;
+  line-height: 20px;
+  color: #000;
+  padding: 0;
+}
+
+.teaser-blau.teaser-blau-specs .teaser-blau-content ul li strong {
+  color: #000;
+}
+
+.teaser-blau.teaser-blau-specs .teaser-blau-content .button-container {
+  display: block;
+  margin: 10px 0 0;
+}
+
+body.blau .teaser-blau.teaser-blau-specs .teaser-blau-content a:any-link {
+  display: inline-block;
+  background-color: transparent;
+  color: rgb(120, 20, 179);
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+  text-decoration: none;
+}
+
+body.blau .teaser-blau.teaser-blau-specs .teaser-blau-content a:hover {
+  text-decoration: underline;
+  background-color: transparent;
+  color: rgb(120, 20, 179);
+  border: none;
+}
+
+@media (width <= 768px) {
+  .teaser-blau.teaser-blau-specs .teaser-blau-image {
+    position: static;
+    width: 100%;
+    height: auto;
+  }
+
+  .teaser-blau.teaser-blau-specs .teaser-blau-content {
+    padding: 20px;
+    margin-left: 0;
+  }
+}

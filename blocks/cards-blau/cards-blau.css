@@ -5,7 +5,7 @@
 .cards-blau {
   --blau-primary: #0072bc;
   --blau-accent: #00b6f1;
-  --blau-font: 'Verdana', 'Tahoma', sans-serif;
+  --blau-font: 'CodeProRegular', 'Verdana', 'Tahoma', sans-serif;
 
   font-family: var(--blau-font);
   max-width: 100%;
@@ -54,10 +54,10 @@
 }
 
 .cards-blau .cards-blau-card-body p {
-  font-size: 13px;
-  line-height: 1.5;
-  color: #333;
-  margin: 0 0 12px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000;
+  margin: 0 0 10px;
   flex: 1;
 }
 
@@ -68,24 +68,25 @@
   margin-bottom: 8px;
 }
 
-.cards-blau .cards-blau-card-body a {
+body.blau .cards-blau .cards-blau-card-body a:any-link {
   display: inline-block;
-  color: #000;
-  background-color: #FFA922;
-  border: 1px solid #FFA922;
+  color: #fff;
+  background-color: #0072bc;
+  border: 1px solid #0072bc;
   border-radius: 2px;
   padding: 12px 30px;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 400;
+  font-family: var(--blau-font);
   text-decoration: none;
   text-align: center;
   transition: background-color 0.2s, color 0.2s;
   align-self: flex-start;
 }
 
-.cards-blau .cards-blau-card-body a:hover {
-  background-color: #E89500;
-  color: #000;
+body.blau .cards-blau .cards-blau-card-body a:hover {
+  background-color: #005a96;
+  color: #fff;
 }
 
 @media (width <= 768px) {
