@@ -805,4 +805,12 @@ body.blau ol li a:hover {
   text-decoration: underline;
 }
 
+/* Blau ToC heading: styled like h2 to match source span.h2 */
+body.blau .toc-heading {
+  font-size: 28px;
+  font-family: 'CodeProBold', 'Verdana', 'Tahoma', sans-serif;
+  line-height: 1.1;
+  margin: 20px 0;
+}
+
 /* stylelint-enable no-descending-specificity */

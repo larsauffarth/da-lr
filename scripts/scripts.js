@@ -231,12 +231,19 @@ function buildComparisonTable(main) {
 /**
  * Rewrites ToC anchor links to target local heading IDs.
  * Finds OL links pointing to external anchors and maps them to page headings by text.
+ * Also styles the ToC heading paragraph to match the source (h2-like appearance).
  */
 function fixTocAnchors(main) {
   const ols = main.querySelectorAll('.default-content-wrapper ol');
   ols.forEach((ol) => {
     const links = ol.querySelectorAll('a[href*="#"]');
     if (links.length < 2) return;
+
+    // Style the paragraph immediately before the OL as a ToC heading
+    const prev = ol.previousElementSibling;
+    if (prev && prev.tagName === 'P' && !prev.querySelector('a')) {
+      prev.classList.add('toc-heading');
+    }
 
     links.forEach((a) => {
       const linkText = a.textContent.trim();
