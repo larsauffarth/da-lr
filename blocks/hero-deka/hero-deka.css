@@ -37,40 +37,49 @@
   margin-bottom: 0;
 }
 
+/* Fluid layout: override the default 1200px section cap */
+main > .section.hero-deka-container > div {
+  max-width: 1920px;
+  padding: 0 var(--deka-container-px);
+}
+
 .hero-deka-container + .section {
   margin-top: 0;
 }
 
 /* ---- Mobile layout (stacked) ---- */
 .hero-deka {
-  position: relative;
   padding: 0;
   font-family: var(--deka-font);
   overflow: hidden;
 }
 
-/* Background image row */
-.hero-deka > div:first-child {
+/* Stage wrapper (image + text overlay) */
+.hero-deka .hero-deka-stage {
   position: relative;
+}
+
+/* Background image */
+.hero-deka .hero-deka-stage > div:first-child {
   width: 100%;
   height: 300px;
   overflow: hidden;
 }
 
-.hero-deka > div:first-child picture {
+.hero-deka .hero-deka-stage > div:first-child picture {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-.hero-deka > div:first-child img {
+.hero-deka .hero-deka-stage > div:first-child img {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
 /* Text overlay panel */
-.hero-deka > div:nth-child(2) {
+.hero-deka .hero-deka-stage > div:last-child {
   position: relative;
   z-index: 1;
   background: #fff;
@@ -79,7 +88,7 @@
 }
 
 /* General paragraph */
-.hero-deka > div:nth-child(2) p {
+.hero-deka .hero-deka-stage > div:last-child p {
   color: var(--deka-secondary);
   font-size: 18px;
   line-height: 1.3;
@@ -87,7 +96,7 @@
 }
 
 /* Tag chip */
-.hero-deka > div:nth-child(2) p:first-child {
+.hero-deka .hero-deka-stage > div:last-child p:first-child {
   display: inline-flex;
   background: var(--deka-warm-beige);
   color: var(--deka-tag-text);
@@ -100,9 +109,9 @@
 }
 
 /* stylelint-disable no-descending-specificity */
-.hero-deka > div:nth-child(2) h1,
-.hero-deka > div:nth-child(2) h2,
-.hero-deka > div:nth-child(2) h3 {
+.hero-deka .hero-deka-stage > div:last-child h1,
+.hero-deka .hero-deka-stage > div:last-child h2,
+.hero-deka .hero-deka-stage > div:last-child h3 {
   color: var(--deka-primary);
   font-family: var(--deka-font);
   font-size: 28px;
@@ -112,7 +121,7 @@
   margin: 0 0 16px;
 }
 
-.hero-deka > div:nth-child(2) a.button {
+.hero-deka .hero-deka-stage > div:last-child a.button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -130,13 +139,13 @@
   transition: background 0.2s;
 }
 
-.hero-deka > div:nth-child(2) a.button:hover {
+.hero-deka .hero-deka-stage > div:last-child a.button:hover {
   background: var(--deka-secondary);
   border-color: var(--deka-secondary);
 }
 
-/* ---- Sub-teaser cards (rows 3, 4, 5) ---- */
-.hero-deka > div:nth-child(n+3) {
+/* ---- Sub-teaser cards ---- */
+.hero-deka > div:not(.hero-deka-stage) {
   display: flex;
   align-items: center;
   gap: 16px;
@@ -146,26 +155,26 @@
   margin: 12px 16px 0;
 }
 
-.hero-deka > div:nth-child(n+3) > div:first-child {
+.hero-deka > div:not(.hero-deka-stage) > div:first-child {
   flex-shrink: 0;
   width: 100px;
   height: 100px;
 }
 
-.hero-deka > div:nth-child(n+3) > div:first-child picture {
+.hero-deka > div:not(.hero-deka-stage) > div:first-child picture {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-.hero-deka > div:nth-child(n+3) > div:first-child img {
+.hero-deka > div:not(.hero-deka-stage) > div:first-child img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   border-radius: 0;
 }
 
-.hero-deka > div:nth-child(n+3) > div:last-child {
+.hero-deka > div:not(.hero-deka-stage) > div:last-child {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -173,7 +182,7 @@
   min-height: 100%;
 }
 
-.hero-deka > div:nth-child(n+3) > div:last-child p:first-child {
+.hero-deka > div:not(.hero-deka-stage) > div:last-child p:first-child {
   display: inline-flex;
   background: var(--deka-warm-beige);
   color: var(--deka-tag-text);
@@ -186,9 +195,9 @@
   width: fit-content;
 }
 
-.hero-deka > div:nth-child(n+3) > div:last-child h2,
-.hero-deka > div:nth-child(n+3) > div:last-child h3,
-.hero-deka > div:nth-child(n+3) > div:last-child h4 {
+.hero-deka > div:not(.hero-deka-stage) > div:last-child h2,
+.hero-deka > div:not(.hero-deka-stage) > div:last-child h3,
+.hero-deka > div:not(.hero-deka-stage) > div:last-child h4 {
   color: var(--deka-primary);
   font-size: 18px;
   font-weight: 400;
@@ -197,11 +206,11 @@
 }
 
 /* Reset button container paragraph in sub-cards */
-.hero-deka > div:nth-child(n+3) > div:last-child p:last-child {
+.hero-deka > div:not(.hero-deka-stage) > div:last-child p:last-child {
   margin: 0;
 }
 
-.hero-deka > div:nth-child(n+3) > div:last-child a.button {
+.hero-deka > div:not(.hero-deka-stage) > div:last-child a.button {
   display: inline-flex;
   align-items: center;
   background: transparent;
@@ -216,24 +225,24 @@
   width: fit-content;
 }
 
-.hero-deka > div:nth-child(n+3) > div:last-child a.button:hover {
+.hero-deka > div:not(.hero-deka-stage) > div:last-child a.button:hover {
   background: var(--deka-primary);
   color: #fff;
 }
 
-/* No-image variant */
+/* No-image variant (JS skips wrapper creation) */
 .hero-deka.no-image {
   background: var(--deka-primary);
 }
 
-.hero-deka.no-image > div:nth-child(2) {
+.hero-deka.no-image > div:first-child {
   background: transparent;
 }
 
-.hero-deka.no-image > div:nth-child(2) h1,
-.hero-deka.no-image > div:nth-child(2) h2,
-.hero-deka.no-image > div:nth-child(2) h3,
-.hero-deka.no-image > div:nth-child(2) p {
+.hero-deka.no-image > div:first-child h1,
+.hero-deka.no-image > div:first-child h2,
+.hero-deka.no-image > div:first-child h3,
+.hero-deka.no-image > div:first-child p {
   color: #fff;
 }
 /* stylelint-enable no-descending-specificity */
@@ -241,81 +250,74 @@
 /* ---- Desktop layout (900px+) ---- */
 @media (width >= 900px) {
   .hero-deka {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 24px;
     padding: 24px 0 40px;
   }
 
-  /* Background image - spans full width, row 1 */
-  .hero-deka > div:first-child {
-    grid-column: 1 / -1;
-    grid-row: 1;
-    height: 446px;
+  /* Stage wrapper - full width, positioning context for text overlay */
+  .hero-deka .hero-deka-stage {
+    flex: 0 0 100%;
+    position: relative;
+    margin-bottom: 24px;
+  }
+
+  /* Background image - fills the stage wrapper */
+  .hero-deka .hero-deka-stage > div:first-child {
+    width: 100%;
+    height: 100%;
     overflow: clip;
   }
 
-  /* Text overlay - overlaps image in row 1, left side */
-  .hero-deka > div:nth-child(2) {
-    grid-column: 1 / -1;
-    grid-row: 1;
-    align-self: stretch;
-    max-width: 50%;
-    width: 100%;
-    margin: 24px;
+  /* Text overlay - absolutely positioned within stage (like origin) */
+  .hero-deka .hero-deka-stage > div:last-child {
+    position: absolute;
+    top: 24px;
+    bottom: 24px;
+    left: 24px;
+    width: 50%;
     padding: 24px;
+    margin: 0;
+    box-sizing: border-box;
     background: #fff;
+    box-shadow: rgb(37 105 122 / 5%) 0 0 2px, rgb(37 105 122 / 12%) 0 4px 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
-  .hero-deka > div:nth-child(2) h1,
-  .hero-deka > div:nth-child(2) h2 {
+  .hero-deka .hero-deka-stage > div:last-child h1,
+  .hero-deka .hero-deka-stage > div:last-child h2 {
     font-size: 40px;
     line-height: 40px;
   }
 
-  .hero-deka > div:nth-child(2) p {
+  .hero-deka .hero-deka-stage > div:last-child p {
     font-size: 24px;
     line-height: 28.8px;
     margin: 0 0 32px;
   }
 
-  .hero-deka > div:nth-child(2) p:first-child {
+  .hero-deka .hero-deka-stage > div:last-child p:first-child {
     font-size: 14px;
     line-height: 14px;
     margin: 0 0 12px;
   }
 
   /* Reset paragraph style for the button container */
-  .hero-deka > div:nth-child(2) p:last-child {
+  .hero-deka .hero-deka-stage > div:last-child p:last-child {
     font-size: 16px;
     line-height: normal;
     color: inherit;
     margin: 0;
   }
 
-  /* Sub-teaser cards - row 2, one per column */
-  .hero-deka > div:nth-child(3) {
-    grid-column: 1;
-    grid-row: 2;
-  }
-
-  .hero-deka > div:nth-child(4) {
-    grid-column: 2;
-    grid-row: 2;
-  }
-
-  .hero-deka > div:nth-child(5) {
-    grid-column: 3;
-    grid-row: 2;
-  }
-
-  .hero-deka > div:nth-child(n+3) {
-    display: grid;
-    grid-template-columns: 5fr 7fr;
+  /* Sub-teaser cards - flex row, equal width */
+  .hero-deka > div:not(.hero-deka-stage) {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
     margin: 0;
     padding: 0;
     min-height: 222px;
@@ -323,16 +325,19 @@
     align-items: stretch;
   }
 
-  .hero-deka > div:nth-child(n+3) > div:first-child {
+  .hero-deka > div:not(.hero-deka-stage) > div:first-child {
+    flex: 0 0 42%;
     width: auto;
-    height: 100%;
+    height: auto;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
   }
 
-  .hero-deka > div:nth-child(n+3) > div:first-child img {
+  .hero-deka > div:not(.hero-deka-stage) > div:first-child img {
     width: auto;
     height: auto;
     max-width: 100%;
@@ -340,23 +345,17 @@
     object-fit: contain;
   }
 
-  .hero-deka > div:nth-child(n+3) > div:last-child {
+  .hero-deka > div:not(.hero-deka-stage) > div:last-child {
+    flex: 1 1 0;
     padding: 16px;
-    gap: 0;
     min-height: auto;
   }
 
-  .hero-deka > div:nth-child(n+3) > div:last-child h2,
-  .hero-deka > div:nth-child(n+3) > div:last-child h3,
-  .hero-deka > div:nth-child(n+3) > div:last-child h4 {
+  .hero-deka > div:not(.hero-deka-stage) > div:last-child h2,
+  .hero-deka > div:not(.hero-deka-stage) > div:last-child h3,
+  .hero-deka > div:not(.hero-deka-stage) > div:last-child h4 {
     font-size: 20px;
     line-height: 24px;
   }
 }
 
-/* ---- Large desktop (1200px+) ---- */
-@media (width >= 1200px) {
-  .hero-deka > div:nth-child(2) {
-    max-width: 50%;
-  }
-}

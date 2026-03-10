@@ -124,6 +124,9 @@
   --nav-height-mobile: 56px;
   --header-height: var(--nav-height);
 
+  /* Deka fluid container padding (mobile-first: ≤640px) */
+  --deka-container-px: 1rem;
+
   /* ========================================
    * BUTTONS
    * ======================================== */
@@ -421,6 +424,12 @@ main > .section.hero-corporate-container + .section {
   }
 }
 
+/* Deka sections: fluid layout matching deka.de (no 1200px cap) */
+main > .section[class*="deka"] > div {
+  max-width: 1920px;
+  padding: 0 var(--deka-container-px);
+}
+
 /* ========================================
  * SECTION VARIANTS
  * ======================================== */
@@ -507,6 +516,53 @@ main .section.gray-bg {
   color: var(--color-gray-800);
   margin: 0;
   padding: var(--spacing-2xl) 0;
+}
+
+/* ========================================
+ * DEKA FLUID CONTAINER
+ * Responsive horizontal padding matching deka.de
+ * ======================================== */
+
+.fluid-container {
+  padding-left: var(--deka-container-px);
+  padding-right: var(--deka-container-px);
+}
+
+@media (width >= 640px) {
+  :root {
+    --deka-container-px: 1.5rem;
+  }
+}
+
+@media (width >= 768px) {
+  :root {
+    --deka-container-px: 2rem;
+  }
+}
+
+@media (width >= 1024px) {
+  :root {
+    --deka-container-px: 3rem;
+  }
+}
+
+@media (width >= 1280px) {
+  :root {
+    --deka-container-px: 3.5rem;
+  }
+}
+
+@media (width >= 1536px) {
+  :root {
+    --deka-container-px: 6rem;
+  }
+}
+
+@media (width >= 1920px) {
+  .fluid-container {
+    margin-inline: auto;
+    max-width: 1920px;
+  }
 }
 
 /* ========================================
@@ -777,6 +833,13 @@ main .default-content-wrapper p > a.button::after {
     font-size: 32px;
     line-height: 38.4px;
   }
+}
+
+/* ---- Deka fluid layout (matches deka.de padding: 0 56px, no max-width) ---- */
+
+main > .section[class*="deka"] > div {
+  max-width: none;
+  padding: 0 56px;
 }
 
 /* ---- Deka typography for section headings adjacent to Deka blocks ---- */

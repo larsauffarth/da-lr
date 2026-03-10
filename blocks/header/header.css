@@ -370,6 +370,10 @@ header .breadcrumbs ol li[aria-current] {
    ============================================ */
 
 /* Wrapper: two-row layout with utility bar on top */
+body.deka header {
+  height: auto;
+}
+
 body.deka header .nav-wrapper {
   background-color: #fff;
   position: relative;
