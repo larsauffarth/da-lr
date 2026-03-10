@@ -138,6 +138,32 @@ footer .footer > div > .section:last-child .default-content-wrapper > p:last-chi
   }
 }
 
+/* ---- Deka: Back to top bar ---- */
+body.deka footer .back-to-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background: var(--deka-warm-beige, #F5EFE4);
+  color: var(--deka-primary, #003745);
+  font-family: var(--deka-font, system-ui, sans-serif);
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+}
+
+body.deka footer .back-to-top:hover {
+  background: var(--deka-border, #CDDBDF);
+  text-decoration: none;
+}
+
+body.deka footer .back-to-top .back-to-top-icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
 /* stylelint-disable no-descending-specificity */
 
 /* ============================================
@@ -161,9 +187,9 @@ body.deka footer .footer .section {
 }
 
 body.deka footer .footer .default-content-wrapper {
-  max-width: 1200px;
+  max-width: 1920px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 var(--deka-container-px, 96px);
 }
 
 body.deka footer .footer p {
@@ -187,39 +213,16 @@ body.deka footer .footer > div > .section:nth-child(2) {
 }
 
 body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 0 40px;
+  display: flex;
+  gap: 40px;
 }
 
-/* Explicit grid placement: all children default to column 1 (Kontakt) */
-body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > * {
-  grid-column: 1;
+/* Three equal columns */
+body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > .footer-col {
+  flex: 1 1 0;
 }
 
-/* Column 2: Quicklinks heading + list */
-body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > :nth-child(6) {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > :nth-child(7) {
-  grid-column: 2;
-  grid-row: 2;
-}
-
-/* Column 3: DekaBank Depot heading + list */
-body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > :nth-child(8) {
-  grid-column: 3;
-  grid-row: 1;
-}
-
-body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > :nth-child(9) {
-  grid-column: 3;
-  grid-row: 2;
-}
-
-body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > p strong {
+body.deka footer .footer .footer-col p strong {
   display: block;
   font-size: 20px;
   font-weight: 700;
@@ -228,18 +231,23 @@ body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper 
 }
 
 /* Contact section - special paragraph styling */
-body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > p {
+body.deka footer .footer .footer-col p {
   color: rgb(255 255 255 / 80%);
   font-size: 15px;
   line-height: 1.6;
 }
 
-body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > p a[href^="tel"],
-body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > p a[href^="tel"].button {
+body.deka footer .footer .footer-col .button-container {
+  text-align: left;
+}
+
+body.deka footer .footer .footer-col a[href^="tel"],
+body.deka footer .footer .footer-col a[href^="tel"].button {
   color: #fff;
   font-size: 22px;
   font-weight: 700;
   text-decoration: none;
+  text-align: left;
   display: block;
   margin: 4px 0;
   background: none;
@@ -249,46 +257,52 @@ body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper 
   white-space: normal;
 }
 
-body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > p a[href^="tel"]:hover {
+body.deka footer .footer .footer-col a[href^="tel"]:hover {
   text-decoration: underline;
 }
 
 /* Link lists in all three columns */
-body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul {
+body.deka footer .footer .footer-col ul {
   list-style: none;
   padding: 0;
-  margin: 0 0 8px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul li {
-  margin-bottom: 8px;
+body.deka footer .footer .footer-col ul li {
+  margin: 0;
 }
 
-body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul a {
+body.deka footer .footer .footer-col ul a {
   color: #fff;
   font-size: 15px;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
-body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul a:hover {
+body.deka footer .footer .footer-col ul a:hover {
   opacity: 0.8;
 }
 
 /* --- Section 3: Branding + Social Media --- */
 body.deka footer .footer > div > .section:nth-child(3) {
-  border-top: 2px solid #e30613;
-  padding: 32px 0;
+  padding: 0 0 32px;
 }
 
 body.deka footer .footer > div > .section:nth-child(3) .default-content-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  border-top: 2px solid var(--deka-footer-separator, #BFA37C);
+  padding-top: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 40px;
 }
 
-/* Finanzgruppe branding */
+/* Finanzgruppe branding - column 1, span both rows */
 body.deka footer .footer > div > .section:nth-child(3) .default-content-wrapper > p:first-child {
+  grid-column: 1;
+  grid-row: 1 / 3;
   color: rgb(255 255 255 / 80%);
   font-size: 15px;
   display: flex;
@@ -303,37 +317,49 @@ body.deka footer .footer > div > .section:nth-child(3) .default-content-wrapper 
   filter: brightness(0) invert(1);
 }
 
-/* Social media row */
-body.deka footer .footer > div > .section:nth-child(3) .default-content-wrapper > p:last-child {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 16px;
+/* Social media text - column 2, row 1 */
+body.deka footer .footer > div > .section:nth-child(3) .default-content-wrapper > p:last-of-type {
+  grid-column: 2;
+  grid-row: 1;
   color: rgb(255 255 255 / 80%);
   font-size: 15px;
+  line-height: 1.6;
 }
 
-body.deka footer .footer > div > .section:nth-child(3) .default-content-wrapper > p:last-child a {
+/* Social media icon row - column 2, row 2 */
+body.deka footer .footer-social-icons {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+body.deka footer .footer-social-icons a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-body.deka footer .footer > div > .section:nth-child(3) .default-content-wrapper > p:last-child img {
+body.deka footer .footer-social-icons img {
   width: 30px;
   height: 30px;
   filter: brightness(0) invert(1);
   transition: opacity 0.2s;
 }
 
-body.deka footer .footer > div > .section:nth-child(3) .default-content-wrapper > p:last-child a:hover img {
+body.deka footer .footer-social-icons a:hover img {
   opacity: 0.7;
 }
 
 /* --- Section 4: Legal links --- */
 body.deka footer .footer > div > .section:nth-child(4) {
-  border-top: 2px solid #e30613;
-  padding: 24px 0;
+  padding: 0 0 24px;
+}
+
+body.deka footer .footer > div > .section:nth-child(4) .default-content-wrapper {
+  border-top: 2px solid var(--deka-footer-separator, #BFA37C);
+  padding-top: 24px;
 }
 
 body.deka footer .footer > div > .section:nth-child(4) .default-content-wrapper > ul {
@@ -358,29 +384,17 @@ body.deka footer .footer > div > .section:nth-child(4) .default-content-wrapper 
 /* --- Responsive: mobile layout --- */
 @media (width < 900px) {
   body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 0;
   }
 
-  body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > * {
-    grid-column: 1;
-    grid-row: auto;
-  }
-
-  /* Add spacing before column headings on mobile */
-  body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > :nth-child(6),
-  body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > :nth-child(8) {
+  body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > .footer-col + .footer-col {
     margin-top: 32px;
   }
 
   body.deka footer .footer > div > .section:nth-child(3) .default-content-wrapper {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
-  }
-
-  body.deka footer .footer > div > .section:nth-child(3) .default-content-wrapper > p:last-child {
-    flex-wrap: wrap;
+    grid-template-columns: 1fr;
+    gap: 24px 0;
   }
 
   body.deka footer .footer > div > .section:nth-child(4) .default-content-wrapper > ul {

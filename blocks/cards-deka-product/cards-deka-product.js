@@ -16,6 +16,13 @@ export default function decorate(block) {
     const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
     img.closest('picture').replaceWith(optimizedPic);
   });
+
+  // Mark the 4th card as wide (col-span-2) if it has an image — matches origin's 3+2 layout
+  const items = ul.querySelectorAll('li');
+  if (items.length >= 4 && items[3].querySelector('.cards-deka-product-card-image')) {
+    items[3].classList.add('cards-deka-product-wide');
+  }
+
   block.textContent = '';
   block.append(ul);
 }

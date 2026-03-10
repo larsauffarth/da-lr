@@ -153,4 +153,20 @@
     font-size: 32px;
     line-height: 38.4px;
   }
+
+  /* Wide card: spans 2 columns, horizontal layout (content left, image right) */
+  .cards-deka-product > ul > li.cards-deka-product-wide {
+    grid-column: span 2;
+    flex-direction: row;
+  }
+
+  .cards-deka-product > ul > li.cards-deka-product-wide > .cards-deka-product-card-body {
+    flex: 1 0 0;
+    order: 0;
+  }
+
+  .cards-deka-product > ul > li.cards-deka-product-wide > .cards-deka-product-card-image {
+    flex: 1 0 0;
+    order: 1;
+  }
 }

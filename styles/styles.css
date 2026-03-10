@@ -825,8 +825,8 @@ main .default-content-wrapper p > a.button::after {
 
 @media (width >= 900px) {
   .section.deka-info-card .default-content-wrapper h2 {
-    font-size: 40px;
-    line-height: 48px;
+    font-size: 48px;
+    line-height: 57.6px;
   }
 
   .section.deka-info-card .default-content-wrapper h3 {
@@ -853,8 +853,8 @@ main .default-content-wrapper p > a.button::after {
 
 @media (width >= 900px) {
   .section[class*="deka"] .default-content-wrapper h2 {
-    font-size: 40px;
-    line-height: 48px;
+    font-size: 48px;
+    line-height: 57.6px;
   }
 }
 /* stylelint-enable no-descending-specificity */

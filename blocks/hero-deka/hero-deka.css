@@ -199,6 +199,7 @@ main > .section.hero-deka-container > div {
 .hero-deka > div:not(.hero-deka-stage) > div:last-child h3,
 .hero-deka > div:not(.hero-deka-stage) > div:last-child h4 {
   color: var(--deka-primary);
+  font-family: var(--deka-font);
   font-size: 18px;
   font-weight: 400;
   margin: 0 0 12px;
@@ -289,13 +290,13 @@ main > .section.hero-deka-container > div {
 
   .hero-deka .hero-deka-stage > div:last-child h1,
   .hero-deka .hero-deka-stage > div:last-child h2 {
-    font-size: 40px;
-    line-height: 40px;
+    font-size: 48px;
+    line-height: 48px;
   }
 
   .hero-deka .hero-deka-stage > div:last-child p {
-    font-size: 24px;
-    line-height: 28.8px;
+    font-size: 28px;
+    line-height: 33.6px;
     margin: 0 0 32px;
   }
 
