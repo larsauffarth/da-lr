@@ -9,8 +9,10 @@ export default async function decorate(block) {
   // load footer as fragment
   const footerMeta = getMetadata('footer');
   let footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : '/footer';
-  // DA content paths omit /content/ prefix on live/preview
-  if (!window.location.hostname.includes('localhost') && footerPath.startsWith('/content/')) {
+  // DA content paths: on localhost add /content/ prefix; on live/preview strip it
+  if (window.location.hostname.includes('localhost') && !footerPath.startsWith('/content/')) {
+    footerPath = `/content${footerPath}`;
+  } else if (!window.location.hostname.includes('localhost') && footerPath.startsWith('/content/')) {
     footerPath = footerPath.substring('/content'.length);
   }
   const fragment = await loadFragment(footerPath);

@@ -138,10 +138,16 @@ footer .footer > div > .section:last-child .default-content-wrapper > p:last-chi
   }
 }
 
+/* stylelint-disable no-descending-specificity */
+
 /* ============================================
    Deka Investments - Footer Theme
    Active only on pages with theme=deka metadata
    ============================================ */
+
+body.deka footer {
+  font-family: var(--deka-font, system-ui, -apple-system, sans-serif);
+}
 
 body.deka footer .footer > div {
   margin: 0;
@@ -149,56 +155,238 @@ body.deka footer .footer > div {
   padding: 0;
 }
 
-/* Section 1: Legal links row */
-body.deka footer .footer > div > .section:first-child {
+body.deka footer .footer .section {
   background-color: var(--deka-primary, #003745);
   color: #fff;
-  padding: 20px 30px;
 }
 
-body.deka footer .footer > div > .section:first-child .default-content-wrapper > ul {
+body.deka footer .footer .default-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+body.deka footer .footer p {
+  margin: 0;
+}
+
+/* --- Section 1: Logo --- */
+body.deka footer .footer > div > .section:nth-child(1) {
+  padding: 48px 0 0;
+}
+
+body.deka footer .footer > div > .section:nth-child(1) img {
+  height: 40px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
+/* --- Section 2: Three-column links --- */
+body.deka footer .footer > div > .section:nth-child(2) {
+  padding: 32px 0 40px;
+}
+
+body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0 40px;
+}
+
+/* Explicit grid placement: all children default to column 1 (Kontakt) */
+body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > * {
+  grid-column: 1;
+}
+
+/* Column 2: Quicklinks heading + list */
+body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > :nth-child(6) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > :nth-child(7) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+/* Column 3: DekaBank Depot heading + list */
+body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > :nth-child(8) {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > :nth-child(9) {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > p strong {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+/* Contact section - special paragraph styling */
+body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > p {
+  color: rgb(255 255 255 / 80%);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > p a[href^="tel"],
+body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > p a[href^="tel"].button {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: none;
+  display: block;
+  margin: 4px 0;
+  background: none;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  white-space: normal;
+}
+
+body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > p a[href^="tel"]:hover {
+  text-decoration: underline;
+}
+
+/* Link lists in all three columns */
+body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px;
+}
+
+body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul li {
+  margin-bottom: 8px;
+}
+
+body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul a {
+  color: #fff;
+  font-size: 15px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > ul a:hover {
+  opacity: 0.8;
+}
+
+/* --- Section 3: Branding + Social Media --- */
+body.deka footer .footer > div > .section:nth-child(3) {
+  border-top: 2px solid #e30613;
+  padding: 32px 0;
+}
+
+body.deka footer .footer > div > .section:nth-child(3) .default-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Finanzgruppe branding */
+body.deka footer .footer > div > .section:nth-child(3) .default-content-wrapper > p:first-child {
+  color: rgb(255 255 255 / 80%);
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+body.deka footer .footer > div > .section:nth-child(3) .default-content-wrapper > p:first-child img {
+  height: 36px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
+/* Social media row */
+body.deka footer .footer > div > .section:nth-child(3) .default-content-wrapper > p:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  color: rgb(255 255 255 / 80%);
+  font-size: 15px;
+}
+
+body.deka footer .footer > div > .section:nth-child(3) .default-content-wrapper > p:last-child a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.deka footer .footer > div > .section:nth-child(3) .default-content-wrapper > p:last-child img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
+  transition: opacity 0.2s;
+}
+
+body.deka footer .footer > div > .section:nth-child(3) .default-content-wrapper > p:last-child a:hover img {
+  opacity: 0.7;
+}
+
+/* --- Section 4: Legal links --- */
+body.deka footer .footer > div > .section:nth-child(4) {
+  border-top: 2px solid #e30613;
+  padding: 24px 0;
+}
+
+body.deka footer .footer > div > .section:nth-child(4) .default-content-wrapper > ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 8px 24px;
   padding: 0;
   margin: 0;
 }
 
-body.deka footer .footer > div > .section:first-child .default-content-wrapper > ul a:any-link {
-  color: #fff;
+body.deka footer .footer > div > .section:nth-child(4) .default-content-wrapper > ul a {
+  color: rgb(255 255 255 / 80%);
   font-size: 14px;
-  font-weight: 500;
   text-decoration: none;
-  font-family: var(--deka-font, system-ui, -apple-system, sans-serif);
 }
 
-body.deka footer .footer > div > .section:first-child .default-content-wrapper > ul a:hover {
+body.deka footer .footer > div > .section:nth-child(4) .default-content-wrapper > ul a:hover {
   text-decoration: underline;
-  opacity: 0.85;
 }
 
-/* Section 2: Copyright / branding */
-body.deka footer .footer > div > .section:last-child {
-  background-color: var(--deka-primary, #003745);
-  border-top: 1px solid rgb(255 255 255 / 15%);
-  color: rgb(255 255 255 / 70%);
-  padding: 16px 30px;
-  text-align: center;
-}
+/* --- Responsive: mobile layout --- */
+@media (width < 900px) {
+  body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
 
-body.deka footer .footer > div > .section:last-child .default-content-wrapper > p {
-  font-size: 13px;
-  font-family: var(--deka-font, system-ui, -apple-system, sans-serif);
-  margin: 0;
-  color: rgb(255 255 255 / 70%);
-}
+  body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > * {
+    grid-column: 1;
+    grid-row: auto;
+  }
 
-@media (width < 600px) {
-  body.deka footer .footer > div > .section:first-child .default-content-wrapper > ul {
+  /* Add spacing before column headings on mobile */
+  body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > :nth-child(6),
+  body.deka footer .footer > div > .section:nth-child(2) .default-content-wrapper > :nth-child(8) {
+    margin-top: 32px;
+  }
+
+  body.deka footer .footer > div > .section:nth-child(3) .default-content-wrapper {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  body.deka footer .footer > div > .section:nth-child(3) .default-content-wrapper > p:last-child {
+    flex-wrap: wrap;
+  }
+
+  body.deka footer .footer > div > .section:nth-child(4) .default-content-wrapper > ul {
+    flex-direction: column;
     gap: 8px;
   }
 }
+
+/* stylelint-enable no-descending-specificity */
