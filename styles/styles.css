@@ -835,13 +835,6 @@ main .default-content-wrapper p > a.button::after {
   }
 }
 
-/* ---- Deka fluid layout (matches deka.de padding: 0 56px, no max-width) ---- */
-
-main > .section[class*="deka"] > div {
-  max-width: none;
-  padding: 0 56px;
-}
-
 /* ---- Deka typography for section headings adjacent to Deka blocks ---- */
 
 /* stylelint-disable no-descending-specificity */
