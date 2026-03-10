@@ -396,10 +396,12 @@ body.deka header .nav-wrapper::before {
   white-space: pre;
 }
 
-/* Main nav row: white background */
+/* Main nav row: white background, fluid width matching content */
 body.deka header nav {
   background-color: #fff;
   border-bottom: 1px solid #e5e5e5;
+  max-width: 1920px;
+  padding: 0 56px;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
