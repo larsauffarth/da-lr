@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "url": "https://www.pft.net/de/",
+  "path": "de",
+  "timestamp": "2026-03-19T07:49:11.560Z",
+  "title": "Knauf PFT - ALWAYS AT YOUR SITE",
+  "template": "pft-homepage",
+  "blocks": [
+    "carousel-pft",
+    "carousel-pft",
+    "cards-pft",
+    "cards-pft"
+  ]
+}

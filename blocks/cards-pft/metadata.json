@@ -1,0 +1,8 @@
+{
+  "variantName": "cards-pft",
+  "baseBlock": "cards",
+  "sourceContext": {
+    "originUrl": "https://www.pft.net/de/",
+    "originPage": "PFT corporate homepage"
+  }
+}

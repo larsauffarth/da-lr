@@ -2,16 +2,22 @@
   "templates": [
     {
       "name": "rossmann-homepage",
-      "urls": ["https://unternehmen.rossmann.de/"],
+      "urls": [
+        "https://unternehmen.rossmann.de/"
+      ],
       "description": "Rossmann corporate homepage with hero banner, company introduction, press releases/news cards, sustainability teaser, two-column brand teasers, video embed, and new stores CTA",
       "blocks": [
         {
           "name": "hero-corporate",
-          "instances": [".content-header"]
+          "instances": [
+            ".content-header"
+          ]
         },
         {
           "name": "cards-news",
-          "instances": ["#c697.content-press-releases"]
+          "instances": [
+            "#c697.content-press-releases"
+          ]
         },
         {
           "name": "columns-teaser",
@@ -19,6 +25,88 @@
             "#c370.content-teaser",
             "#c360.content-teaser",
             "#c690.content-text.bg-intensivrot"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "pft-homepage",
+      "urls": [
+        "https://www.pft.net/de/"
+      ],
+      "description": "PFT corporate homepage - German language landing page with company overview, products, and services",
+      "blocks": [
+        {
+          "name": "carousel-pft",
+          "instances": [
+            "section#vpHome .carouselViewport ul.jcarousel-skin",
+            "section#vp2036531 .carouselViewport ul.jcarousel-skin"
+          ]
+        },
+        {
+          "name": "cards-pft",
+          "instances": [
+            "section#vp2036530 .carouselTeaser.tribleTeaser",
+            "section#vp2036532 .teaser.threeTeasers.themenTeaser"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-01-hero-carousel",
+          "name": "Hero Carousel",
+          "selector": "section#vpHome",
+          "style": null,
+          "blocks": [
+            "carousel-pft"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-02-news-teasers",
+          "name": "News Teasers",
+          "selector": "section#vp2036530",
+          "style": null,
+          "blocks": [
+            "cards-pft"
+          ],
+          "defaultContent": [
+            "section#vp2036530 h3",
+            "section#vp2036530 a.buttonlink"
+          ]
+        },
+        {
+          "id": "section-03-products-carousel",
+          "name": "Products Carousel",
+          "selector": "section#vp2036531",
+          "style": null,
+          "blocks": [
+            "carousel-pft"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-04-quick-links",
+          "name": "Quick Links",
+          "selector": "section#vp2036532",
+          "style": null,
+          "blocks": [
+            "cards-pft"
+          ],
+          "defaultContent": [
+            "section#vp2036532 h3:first-child",
+            "section#vp2036532 section.linkList"
+          ]
+        },
+        {
+          "id": "section-05-contact",
+          "name": "Contact Footer Bar",
+          "selector": "div.contact_footer",
+          "style": "pft-dark",
+          "blocks": [],
+          "defaultContent": [
+            "div.contact_footer h3",
+            "div.contact_footer p"
           ]
         }
       ]

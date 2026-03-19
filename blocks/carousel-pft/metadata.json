@@ -1,0 +1,8 @@
+{
+  "variantName": "carousel-pft",
+  "baseBlock": "carousel",
+  "sourceContext": {
+    "originUrl": "https://www.pft.net/de/",
+    "originPage": "PFT corporate homepage"
+  }
+}
